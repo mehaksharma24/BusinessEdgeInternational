@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .animate-zoom-pulse {
+    animation: zoomPulse 12s ease-in-out infinite;
+  }
+}
+
+@keyframes zoomPulse {
+  0%   { transform: scale(1);    }
+  50%  { transform: scale(1.12); }
+  100% { transform: scale(1);    }
+}
+/* Force mascot cursor on navbar and all interactive elements */
+nav, 
+nav *, 
+button, 
+button *, 
+a, 
+a *, 
+[role="menuitem"], 
+[role="button"], 
+[role="link"] {
+  cursor: url('/mascot1.png') 0 0, auto !important;
+}
+
+/* GLOBAL MASCOT CURSOR */
+body, 
+*, 
+*:hover, 
+*:active {
+  cursor: url('/mascot1.png') 0 0, auto !important;
+}
