@@ -1,5 +1,5 @@
 // IMPORTS
-import { ArrowLeft, ArrowRight, Box, CheckCircle, Globe, Lightbulb, Package, Palette, Printer, Shirt, SignpostBig, Trophy, Users } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle, Globe, Lightbulb, Package, Palette, Printer, Shirt, SignpostBig, Tag, Trophy, Users } from 'lucide-react';
 import Footer from '../components/Footer';
 import ImageGallery from '../components/ImageGallery';
 import { banners } from '../lib/bannerConfig';
@@ -38,7 +38,6 @@ import BM_29 from '../assets/BM_29.png';
 import BM_30 from '../assets/BM_30.png';
 import BM_31 from '../assets/BM_31.png';
 
-
 // IMAGE IMPORTS — APPAREL (15)
 import AP_01 from '../assets/AP_01.png';
 import AP_02 from '../assets/AP_02.png';
@@ -56,7 +55,6 @@ import AP_13 from '../assets/AP_13.png';
 import AP_14 from '../assets/AP_14.png';
 import AP_15 from '../assets/AP_15.png';
 
-
 // IMAGE IMPORTS — AWARDS (11)
 import AW_01 from '../assets/AW_01.png';
 import AW_02 from '../assets/AW_02.png';
@@ -69,7 +67,6 @@ import AW_08 from '../assets/AW_08.png';
 import AW_09 from '../assets/AW_09.png';
 import AW_10 from '../assets/AW_10.png';
 import AW_11 from '../assets/AW_11.png';
-
 
 // IMAGE IMPORTS — PRINTING (15)
 import PR_01 from '../assets/PR_01.png';
@@ -88,7 +85,6 @@ import PR_13 from '../assets/PR_13.png';
 import PR_14 from '../assets/PR_14.png';
 import PR_15 from '../assets/PR_15.png';
 
-
 // IMAGE IMPORTS — SIGNAGE (15)
 import SC_01 from '../assets/SC_01.png';
 import SC_02 from '../assets/SC_02.png';
@@ -106,14 +102,12 @@ import SC_13 from '../assets/SC_13.png';
 import SC_14 from '../assets/SC_14.png';
 import SC_15 from '../assets/SC_15.png';
 
-
 // IMAGE IMPORTS — CO-PACKING (5)
 import CO_01 from '../assets/CO_01.png';
 import CO_02 from '../assets/CO_02.png';
 import CO_03 from '../assets/CO_03.png';
 import CO_04 from '../assets/CO_04.png';
 import CO_05 from '../assets/CO_05.png';
-
 
 // IMAGE IMPORTS — DEMOS (13)
 import EV_01 from '../assets/EV_01.jpg';
@@ -130,7 +124,6 @@ import EV_11 from '../assets/EV_11.jpg';
 import EV_12 from '../assets/EV_12.jpg';
 import EV_13 from '../assets/EV_13.jpg';
 
-
 // IMAGE IMPORTS — CUSTOM SOLUTIONS (8)
 import CS_01 from '../assets/CS_01.png';
 import CS_02 from '../assets/CS_02.png';
@@ -140,7 +133,6 @@ import CS_05 from '../assets/CS_05.png';
 import CS_06 from '../assets/CS_06.png';
 import CS_07 from '../assets/CS_07.png';
 import CS_08 from '../assets/CS_08.jpeg';
-
 
 // IMAGE IMPORTS — GRAPHIC DESIGN (10)
 import GD_01 from '../assets/GD_01.png';
@@ -153,7 +145,6 @@ import GD_07 from '../assets/GD_07.png';
 import GD_08 from '../assets/GD_08.png';
 import GD_09 from '../assets/GD_09.png';
 import GD_10 from '../assets/GD_10.png';
-
 
 // IMAGE ARRAYS
 const brandedMerchImages = [
@@ -198,7 +189,6 @@ const graphicDesignImages = [
   GD_01, GD_02, GD_03, GD_04, GD_05, GD_06, GD_07, GD_08, GD_09, GD_10
 ];
 
-
 // SERVICE GALLERIES
 const serviceGalleries: Record<number, string[]> = {
   1: brandedMerchImages,
@@ -212,7 +202,6 @@ const serviceGalleries: Record<number, string[]> = {
   9: graphicDesignImages,
   10: [] // No images provided for Website & Social Media Marketing
 };
-
 
 // SERVICE DATA
 const serviceData = [
@@ -412,7 +401,6 @@ const serviceData = [
   },
 ];
 
-
 // COMPONENT
 export default function ServiceDetail({ serviceId, onNavigate }) {
   const service = serviceData.find((s) => s.id === serviceId);
@@ -440,109 +428,109 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
   return (
     <div className="min-h-screen bg-white">
 
-      {/* BANNER */}
-  {/* HERO — EXACT SAME SIZE AS Services.tsx */}
 <section className="relative pt-40 pb-28 overflow-hidden">
 
-{/* Background Image */}
-<div
-  className="absolute inset-0 bg-cover bg-center animate-zoom-pulse"
-  style={{ backgroundImage: `url(${banners.services})` }}
-/>
-
-{/* Gradient Overlay */}
-<div className="absolute inset-0 bg-gradient-to-br from-[#0d3d73]/90 to-[#1a5fa8]/80" />
-
-{/* Floating Blur Orbs */}
-<div className="absolute inset-0 overflow-hidden pointer-events-none">
+  {/* Background Image */}
   <div
-    className="absolute w-[900px] h-[900px] rounded-full opacity-[0.12] blur-3xl animate-slowFloat"
-    style={{
-      background: "radial-gradient(circle, #1a5fa8 0%, transparent 70%)",
-      top: "-20%",
-      right: "-10%",
-    }}
+    className="absolute inset-0 bg-cover bg-center animate-zoom-pulse"
+    style={{ backgroundImage: `url(${banners.services})` }}
   />
-  <div
-    className="absolute w-[700px] h-[700px] rounded-full opacity-[0.10] blur-3xl animate-slowFloatReverse"
-    style={{
-      background: "radial-gradient(circle, #4aa3ff 0%, transparent 70%)",
-      bottom: "5%",
-      left: "-10%",
-    }}
-  />
-</div>
 
-{/* Text */}
-<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
- 
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-br from-[#0d3d73]/90 to-[#1a5fa8]/80" />
 
-  <h1 className="text-5xl sm:text-6xl font-extrabold text-white">
-    {service.title}
-  </h1>
-</div>
+  {/* Floating Blur Orbs */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      className="absolute w-[900px] h-[900px] rounded-full opacity-[0.12] blur-3xl animate-slowFloat"
+      style={{
+        background: "radial-gradient(circle, #1a5fa8 0%, transparent 70%)",
+        top: "-20%",
+        right: "-10%",
+      }}
+    />
+    <div
+      className="absolute w-[700px] h-[700px] rounded-full opacity-[0.10] blur-3xl animate-slowFloatReverse"
+      style={{
+        background: "radial-gradient(circle, #4aa3ff 0%, transparent 70%)",
+        bottom: "5%",
+        left: "-10%",
+      }}
+    />
+  </div>
 
-{/* Animations */}
-<style>{`
-  @keyframes slowFloat {
-    0%, 100% { transform: translate(0,0); }
-    50% { transform: translate(-60px, 40px); }
-  }
-  @keyframes slowFloatReverse {
-    0%, 100% { transform: translate(0,0); }
-    50% { transform: translate(60px, -40px); }
-  }
-  @keyframes zoom-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-  }
-  .animate-zoom-pulse {
-    animation: zoom-pulse 12s ease-in-out infinite;
-  }
-  .animate-slowFloat {
-    animation: slowFloat 18s ease-in-out infinite;
-  }
-  .animate-slowFloatReverse {
-    animation: slowFloatReverse 22s ease-in-out infinite;
-  }
-`}</style>
+  {/* Text */}
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 className="text-5xl sm:text-6xl font-extrabold text-white">
+      {service.title}
+    </h1>
+  </div>
+
+  {/* Animations */}
+  <style>{`
+    @keyframes slowFloat {
+      0%, 100% { transform: translate(0,0); }
+      50% { transform: translate(-60px, 40px); }
+    }
+
+    @keyframes slowFloatReverse {
+      0%, 100% { transform: translate(0,0); }
+      50% { transform: translate(60px, -40px); }
+    }
+
+    @keyframes zoom-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .animate-zoom-pulse {
+      animation: zoom-pulse 12s ease-in-out infinite;
+    }
+
+    .animate-slowFloat {
+      animation: slowFloat 18s ease-in-out infinite;
+    }
+
+    .animate-slowFloatReverse {
+      animation: slowFloatReverse 22s ease-in-out infinite;
+    }
+  `}</style>
+
 </section>
 
 {/* Service Quick Links */}
-<div className="w-full py-4 flex items-center justify-center gap-6">
+<div className="w-full py-4 flex items-center justify-center gap-5 overflow-x-auto whitespace-nowrap">
   {[
-  { id: 1, icon: Package, label: "Merdch" },
-  { id: 2, icon: Shirt, label: "Uniforms"},
-  { id: 3, icon: Trophy, label: "Trophies" },
-  { id: 4, icon: Printer, label: "Offset Printing" },
-  { id: 5, icon: SignpostBig, label: "Signage" },
-  { id: 6, icon: Box, label: "Kitting" },
-  { id: 7, icon: Users, label: "Sampling Events" },
-  { id: 8, icon: Lightbulb, label: "Custom" },
-  { id: 9, icon: Palette, label: "Graphic Design" },
-  { id: 10, icon: Globe, label: "Websites & Media" },
+    { id: 1, icon: Tag, label: "Merch" },
+    { id: 2, icon: Shirt, label: "Uniforms" },
+    { id: 3, icon: Trophy, label: "Trophies" },
+    { id: 4, icon: Printer, label: "Offset Printing" },
+    { id: 5, icon: SignpostBig, label: "Signage" },
+    { id: 6, icon: Package, label: "Kitting" },
+    { id: 7, icon: Users, label: "Sampling Events" },
+    { id: 8, icon: Lightbulb, label: "Custom" },
+    { id: 9, icon: Palette, label: "Graphic Design" },
+    { id: 10, icon: Globe, label: "Websites & Media" },
   ].map((item) => (
     <button
       key={item.id}
       onClick={() => onNavigate(`service-${item.id}`)}
-      className="flex flex-col items-center group"
+      className="flex flex-col items-center group w-[90px]"
     >
-      <div className="w-12 h-12 rounded-full border border-orange-400 flex items-center justify-center text-orange-500 group-hover:bg-orange-50 transition">
-        <item.icon size={18} />
+      <div className="w-14 h-14 rounded-full border-2 border-orange-500 flex items-center justify-center text-orange-600 group-hover:bg-orange-50 transition">
+        <item.icon size={22} strokeWidth={2.6} />
       </div>
-      <span className="text-[11px] mt-1 text-gray-700 group-hover:text-orange-600 transition">
+
+      <span className="text-[11px] font-semibold mt-2 text-gray-800 group-hover:text-orange-600 transition text-center leading-tight">
         {item.label}
       </span>
     </button>
   ))}
 </div>
 
-
-
-
       {/* MAIN CONTENT */}
       <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl xl:max-w-[1500px] mx-auto px-2 sm:px-4 lg:px-6">
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
@@ -588,25 +576,34 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
                   ))}
                 </ul>
 
-                {/* OPTIONAL NOTE */}
                 {service.note && (
-                  <div
-                    className="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-100 fade-up"
-                    style={{ animationDelay: "1.2s" }}
-                  >
-                    <p className="text-gray-700 text-sm">
-                      {service.note.text.replace(service.note.linkText, '')}{' '}
-                      <a
-                        href={service.note.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#1a5fa8] font-semibold hover:underline"
-                      >
-                        {service.note.linkText}
-                      </a>
-                    </p>
-                  </div>
-                )}
+  <div
+    className="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-100 fade-up flex items-center gap-4"
+    style={{ animationDelay: "1.2s" }}
+  >
+    {service.id === 5 && (
+      <img
+        src="/Sign.png"
+        alt="BEI Sign Central Logo"
+        className="w-20 h-20 object-contain flex-shrink-0"
+      />
+    )}
+
+    <p className="text-gray-700 text-sm leading-snug">
+      {service.note.text.replace(service.note.linkText, '')}{' '}
+      <a
+        href={service.note.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[#1a5fa8] font-semibold hover:underline"
+      >
+        {service.note.linkText}
+      </a>
+    </p>
+  </div>
+)}
+
+
               </div>
 
               {/* WHY IT WORKS */}
@@ -724,3 +721,5 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
     </div>
   );
 }
+
+

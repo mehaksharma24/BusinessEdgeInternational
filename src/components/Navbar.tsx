@@ -1,6 +1,6 @@
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import logoTagline from '../assets/beilogo.png';
+import logoTagline from '../assets/BEI_DualLogo_Tagline.png';
 
 interface NavbarProps {
   currentPage: string;
@@ -33,10 +33,10 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
 
   const navLinks = [
     { label: 'Home', page: 'home' },
-    //{ label: 'Our Team', page: 'team' },
     { label: 'Services', page: 'services' },
     { label: 'Clients', page: 'clients' },
-    { label: 'Search', page: 'search' },
+    { label: 'Browse Products', page: 'search' },
+    { label: 'Contact Us', page: 'contact' },
   ];
 
   return (
@@ -47,14 +47,14 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
           : 'bg-white/95 backdrop-blur-sm shadow-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="w-full px-0">
+        <div className="flex items-center justify-between h-28 pl-0 pr-6">
           <button onClick={() => onNavigate('home')} className="flex-shrink-0">
-            <img src={logoTagline} alt="BEI Logo" className="h-16 w-auto" />
+            <img src={logoTagline} alt="BEI Logo" className="h-28 w-auto" />
           </button>
 
           {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-1 group">
             {navLinks.map((link) =>
               link.page === 'services' ? (
                 <div key={link.page} className="relative">
@@ -62,26 +62,27 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                     onMouseEnter={() => setServicesOpen(true)}
                     onMouseLeave={() => setServicesOpen(false)}
                     onClick={() => onNavigate('services')}
-                    className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-base font-extrabold tracking-wide transition-all duration-200 ${
                       currentPage === 'services' || currentPage.startsWith('service-')
                         ? 'text-orange-500 bg-orange-50'
                         : 'text-gray-700 hover:text-orange-500 hover:bg-orange-50'
                     }`}
                   >
                     Services
-                    <ChevronDown size={14} className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown size={15} className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
                   </button>
+
                   {servicesOpen && (
                     <div
                       onMouseEnter={() => setServicesOpen(true)}
                       onMouseLeave={() => setServicesOpen(false)}
-                      className="absolute top-full left-0 w-64 bg-white shadow-xl rounded-xl border border-gray-100 py-2 mt-1"
+                      className="absolute top-full left-0 w-72 bg-white shadow-xl rounded-xl border border-gray-100 py-3 mt-1"
                     >
                       {services.map((service, i) => (
                         <button
                           key={i}
                           onClick={() => { onNavigate(`service-${i + 1}`); setServicesOpen(false); }}
-                          className="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-colors"
+                          className="w-full text-left px-5 py-2.5 text-sm font-medium text-gray-600 hover:text-orange-500 hover:bg-orange-50 transition-colors"
                         >
                           {service}
                         </button>
@@ -93,7 +94,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                 <button
                   key={link.page}
                   onClick={() => onNavigate(link.page)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  className={`px-5 py-2.5 rounded-lg text-base font-extrabold tracking-wide transition-all duration-200 ${
                     currentPage === link.page
                       ? 'text-orange-500 bg-orange-50'
                       : 'text-gray-700 hover:text-orange-500 hover:bg-orange-50'
@@ -103,9 +104,10 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                 </button>
               )
             )}
+
             <button
               onClick={() => onNavigate('login')}
-              className="ml-4 px-5 py-2 bg-[#00000] text-white text-sm font-semibold rounded-lg hover:bg-[black] transition-all duration-200 shadow-sm hover:shadow-md"
+              className="ml-3 px-5 py-2.5 bg-[#1a5fa8] text-white text-base font-extrabold rounded-lg hover:bg-[#154d8a] transition-all duration-200 shadow-sm hover:shadow-md opacity-0 group-hover:opacity-100"
             >
               Login
             </button>
@@ -129,7 +131,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
               <button
                 key={link.page}
                 onClick={() => { onNavigate(link.page); setMenuOpen(false); }}
-                className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                className={`w-full text-left px-4 py-3 rounded-lg text-sm font-extrabold transition-colors ${
                   currentPage === link.page
                     ? 'text-orange-500 bg-orange-50'
                     : 'text-gray-700 hover:text-orange-500 hover:bg-orange-50'
@@ -140,7 +142,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
             ))}
             <button
               onClick={() => { onNavigate('login'); setMenuOpen(false); }}
-              className="w-full mt-2 px-4 py-3 bg-[#1a5fa8] text-white text-sm font-semibold rounded-lg hover:bg-[#154d8a] transition-colors"
+              className="w-full mt-2 px-4 py-3 bg-[#1a5fa8] text-white text-sm font-extrabold rounded-lg hover:bg-[#154d8a] transition-colors"
             >
               Login
             </button>

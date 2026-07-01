@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import splashBanner from '../assets/Home_Banner.png';
-import splashLogo from '../assets/Home_LogoTagline.png';
 
-// To swap images, change the imports above or replace with any URL string.
+// Logo removed completely
 
 interface SplashScreenProps {
   onComplete: () => void;
@@ -12,10 +11,10 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
   const [phase, setPhase] = useState<'enter' | 'hold' | 'exit'>('enter');
 
   useEffect(() => {
-    // Logo finishes entering → hold for a moment → start exit
     const holdTimer = setTimeout(() => setPhase('hold'), 800);
     const exitTimer = setTimeout(() => setPhase('exit'), 2400);
     const doneTimer = setTimeout(() => onComplete(), 3400);
+
     return () => {
       clearTimeout(holdTimer);
       clearTimeout(exitTimer);
@@ -30,7 +29,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
       }`}
       style={{ pointerEvents: phase === 'exit' ? 'none' : 'all' }}
     >
-      {/* Banner background — replace splashBanner to change */}
+      {/* Banner background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -40,10 +39,10 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         }}
       />
 
-      {/* Dark overlay for contrast */}
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#0d3d73]/70" />
 
-      {/* Radial glow behind logo */}
+      {/* Radial glow */}
       <div
         className="absolute w-[420px] h-[420px] rounded-full"
         style={{
@@ -53,7 +52,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         }}
       />
 
-      {/* Logo — replace splashLogo to change */}
+      {/* Empty center container (logo removed) */}
       <div
         className="relative z-10 flex flex-col items-center"
         style={{
@@ -64,21 +63,8 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
           transitionDelay: phase === 'enter' ? '0.15s' : '0s',
         }}
       >
-        <img
-          src={splashLogo}
-          alt="BEI"
-          className="h-85 sm:h-88 w-auto drop-shadow-2xl"
-        />
-        {/* Tagline fade-in below logo */}
-        <p
-          className="mt-4 text-white/80 text-sm sm:text-base tracking-[0.25em] uppercase font-medium"
-          style={{
-            opacity: phase === 'hold' || phase === 'exit' ? 1 : 0,
-            transition: 'opacity 0.6s ease 0.4s',
-          }}
-        >
-          
-        </p>
+        {/* Logo removed */}
+        {/* Tagline removed */}
       </div>
 
       {/* Bottom progress bar */}
@@ -86,7 +72,12 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         <div
           className="h-full bg-orange-500 origin-left"
           style={{
-            transform: phase === 'enter' ? 'scaleX(0)' : phase === 'hold' ? 'scaleX(0.65)' : 'scaleX(1)',
+            transform:
+              phase === 'enter'
+                ? 'scaleX(0)'
+                : phase === 'hold'
+                ? 'scaleX(0.65)'
+                : 'scaleX(1)',
             transition:
               phase === 'enter'
                 ? 'transform 0.8s ease'

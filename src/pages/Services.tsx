@@ -15,20 +15,17 @@ import {
 import Footer from "../components/Footer";
 import { banners } from "../lib/bannerConfig";
 
-// Importing your real images from src/assets
-import AP_01 from "../assets/AP_01.png";
-import AW_01 from "../assets/AW_01.png";
-import BM_01 from "../assets/BM_01.png";
-import CO_01 from "../assets/CO_01.png";
-import CS_01 from "../assets/CS_01.png";
-import EV_01 from "../assets/EV_01.jpg";
-import GD_01 from "../assets/GD_01.png";
-import PR_01 from "../assets/PR_01.png";
-import SC_01 from "../assets/SC_01.png";
-
-// Stock image for Website & Social Media
-const SOCIAL_STOCK =
-  "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg";
+// Importing your real images from src/assets (exact filenames)
+import ApparelTeam02 from "../assets/Apparel & Team Uniforms.png";
+import AwardsTrophies03 from "../assets/Awards & Trophies.png";
+import BrandedMerch01 from "../assets/Branded Merch.png";
+import CoPacking06 from "../assets/Co-Packing & Kitting.png";
+import CustomSolutions08 from "../assets/Custom Solutions.png";
+import DemosSampling07 from "../assets/Demos & Sampling Events.png";
+import GraphicDesigning09 from "../assets/Graphic Designing.png";
+import SignageDisplays05 from "../assets/Signage & Displays.png";
+import WebOffset04 from "../assets/Web & Offset Printing.png";
+import WebsiteSocial10 from "../assets/Website & Social Media Marketing.png";
 
 interface ServicesProps {
   onNavigate: (page: string) => void;
@@ -42,7 +39,7 @@ const services = [
     short: "Your brand belongs in people's hands.",
     description:
       "We create merch they'll actually use — and every time they do, they think of you.",
-    photo: BM_01,
+    photo: BrandedMerch01,
   },
   {
     id: 2,
@@ -51,7 +48,7 @@ const services = [
     short: "Look unified. Look professional.",
     description:
       "Look like you mean business with custom apparel for every team member.",
-    photo: AP_01,
+    photo: ApparelTeam02,
   },
   {
     id: 3,
@@ -60,7 +57,7 @@ const services = [
     short: "People remember how you made them feel.",
     description:
       "Custom recognition pieces that drive performance and spark conversations.",
-    photo: AW_01,
+    photo: AwardsTrophies03,
   },
   {
     id: 4,
@@ -69,7 +66,7 @@ const services = [
     short: "From 50 copies to 50,000.",
     description:
       "Crisp, clean, and built to impress — with specialty finishes available.",
-    photo: PR_01,
+    photo: WebOffset04,
   },
   {
     id: 5,
@@ -78,7 +75,7 @@ const services = [
     short: "Your one-stop shop for all signage needs.",
     description:
       "From interior signs to full event displays — design, permits, fabrication, installation.",
-    photo: SC_01,
+    photo: SignageDisplays05,
   },
   {
     id: 6,
@@ -87,7 +84,7 @@ const services = [
     short: "You focus on growing. We'll handle the boxes.",
     description:
       "Scalable assembly, bundling, and kitting from small batches to high volume.",
-    photo: CO_01,
+    photo: CoPacking06,
   },
   {
     id: 7,
@@ -96,7 +93,7 @@ const services = [
     short: "Nothing sells like letting people experience it.",
     description:
       "In-store demos, sampling programs, pop-ups, and trained brand ambassadors.",
-    photo: EV_01,
+    photo: DemosSampling07,
   },
   {
     id: 8,
@@ -105,7 +102,7 @@ const services = [
     short: "Got a big idea? Good. That's our favorite kind.",
     description:
       "End-to-end concept development and execution for one-of-a-kind campaigns.",
-    photo: CS_01,
+    photo: CustomSolutions08,
   },
   {
     id: 9,
@@ -114,7 +111,7 @@ const services = [
     short: "Design that does the talking.",
     description:
       "Logos, brand identity, marketing collateral, and guidelines that keep everything consistent.",
-    photo: GD_01,
+    photo: GraphicDesigning09,
   },
   {
     id: 10,
@@ -123,7 +120,7 @@ const services = [
     short: "Your online presence is working 24/7.",
     description:
       "Web design, social strategy, content management, and data-driven paid ads.",
-    photo: SOCIAL_STOCK,
+    photo: WebsiteSocial10,
   },
 ];
 
@@ -171,7 +168,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       `}</style>
 
       {/* Hero */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-80 pb-52 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center animate-zoom-pulse"
           style={{ backgroundImage: `url(${banners.services})` }}
@@ -201,12 +198,12 @@ export default function Services({ onNavigate }: ServicesProps) {
                 onClick={() => onNavigate(`service-${service.id}`)}
                 className="group rounded-xl bg-white/80 backdrop-blur-sm border border-orange-200 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-left overflow-hidden"
               >
-                {/* Top Image */}
-                <div className="w-full h-48 overflow-hidden">
+                {/* FULL COVER IMAGE FIX */}
+                <div className="w-full h-56 overflow-hidden">
                   <img
                     src={service.photo}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover"
                   />
                 </div>
 

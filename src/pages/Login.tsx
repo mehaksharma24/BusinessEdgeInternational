@@ -1,7 +1,7 @@
+import { ArrowLeft, Eye, EyeOff, Loader2 } from 'lucide-react';
 import { useState } from 'react';
-import { Eye, EyeOff, ArrowLeft, Loader2 } from 'lucide-react';
-import { supabase } from '../lib/supabase';
 import { banners } from '../lib/bannerConfig';
+import { supabase } from '../lib/supabase';
 
 interface LoginProps {
   onNavigate: (page: string) => void;

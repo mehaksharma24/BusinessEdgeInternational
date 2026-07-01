@@ -4,14 +4,17 @@ import { useState } from 'react';
 import Footer from '../components/Footer';
 import { banners } from '../lib/bannerConfig';
 import { clientCards, marqueeLogos } from '../lib/clientConfig';
-import { testimonials } from '../lib/testimonials'; // ← KEEP THIS ONE
+import { testimonials } from '../lib/testimonials';
 
 interface ClientsProps {
   onNavigate: (page: string) => void;
 }
 
-const row1 = marqueeLogos;
-const row2 = [...marqueeLogos].reverse();
+const partSize = Math.ceil(marqueeLogos.length / 4);
+const row1 = marqueeLogos.slice(0, partSize);
+const row2 = marqueeLogos.slice(partSize, partSize * 2);
+const row3 = marqueeLogos.slice(partSize * 2, partSize * 3);
+const row4 = marqueeLogos.slice(partSize * 3);
 
 const CARDS_PER_PAGE = 3;
 
@@ -49,15 +52,15 @@ function MarqueeRow({ logos, reverse = false }: { logos: typeof marqueeLogos; re
         style={{ background: 'linear-gradient(to left, #f9fafb, transparent)' }} />
 
       <div
-        className="flex gap-10 items-center"
+        className="flex gap-16 items-center"
         style={{
           width: 'max-content',
-          animation: `marquee${reverse ? 'Rev' : 'Fwd'} ${logos.length * 2.2}s linear infinite`,
+          animation: `marquee${reverse ? 'Rev' : 'Fwd'} ${logos.length * 2.5}s linear infinite`,
         }}
       >
         {doubled.map((logo, i) => (
-          <div key={i} className="flex-shrink-0 w-28 flex items-center justify-center h-14 transition-all duration-300">
-            <LogoImg src={logo.src} name={logo.name} className="max-h-9 max-w-[108px] object-contain" />
+          <div key={i} className="flex-shrink-0 w-44 flex items-center justify-center h-20 transition-all duration-300">
+            <LogoImg src={logo.src} name={logo.name} className="max-h-14 max-w-[160px] object-contain" />
           </div>
         ))}
       </div>
@@ -78,18 +81,20 @@ export default function Clients({ onNavigate }: ClientsProps) {
       <style>{`
         @keyframes marqueeFwd { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         @keyframes marqueeRev { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+        @keyframes zoom-pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+        .animate-zoom-pulse { animation: zoom-pulse 12s ease-in-out infinite; }
       `}</style>
 
       {/* Hero */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-80 pb-52 overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center animate-zoom-pulse"
           style={{ backgroundImage: `url(${banners.clients})` }} />
         <div className="absolute inset-0 bg-gradient-to-br from-[#0d3d73]/90 to-[#1a5fa8]/80" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-orange-300 font-semibold text-sm uppercase tracking-widest mb-4">Our Clients</p>
-          <h1 className="text-5xl sm:text-6xl font-montserrat font-black text-white"
-            style={{ textShadow: "2px 2px 4px #243d7d" }}>
+          <h1 className="text-5xl sm:text-6xl font-extrabold text-white"
+            style={{ textShadow: '2px 2px 4px #243d7d' }}>
             Trusted by brands that value impact.
           </h1>
         </div>
@@ -101,9 +106,11 @@ export default function Clients({ onNavigate }: ClientsProps) {
           Brands we've worked with
         </p>
 
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-8">
           <MarqueeRow logos={row1} reverse={false} />
           <MarqueeRow logos={row2} reverse={true} />
+          <MarqueeRow logos={row3} reverse={false} />
+          <MarqueeRow logos={row4} reverse={true} />
         </div>
       </section>
 
@@ -123,8 +130,8 @@ export default function Clients({ onNavigate }: ClientsProps) {
                 <div key={i}
                   className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col">
 
-                  <div className="flex items-center justify-center h-32 bg-gray-50 border-b border-gray-100 px-8">
-                    <LogoImg src={client.src} name={client.name} className="max-h-12 max-w-[160px] object-contain" />
+                  <div className="flex items-center justify-center h-40 bg-gray-50 border-b border-gray-100 px-8">
+                    <LogoImg src={client.src} name={client.name} className="max-h-18 max-w-[220px] object-contain" />
                   </div>
 
                   <div className="p-6 flex flex-col gap-2 flex-1">
@@ -138,7 +145,6 @@ export default function Clients({ onNavigate }: ClientsProps) {
               ))}
           </div>
 
-          {/* Pagination */}
           <div className="flex items-center justify-center gap-6 mt-10">
             <button
               onClick={() => setCardPage(p => Math.max(0, p - 1))}
@@ -166,7 +172,6 @@ export default function Clients({ onNavigate }: ClientsProps) {
             </button>
           </div>
 
-        
         </div>
       </section>
 
@@ -200,7 +205,6 @@ export default function Clients({ onNavigate }: ClientsProps) {
               ))}
           </div>
 
-          {/* Testimonials Pagination */}
           <div className="flex items-center justify-center gap-6 mt-10">
             <button
               onClick={() => setTestimonialPage(p => Math.max(0, p - 1))}
@@ -227,8 +231,6 @@ export default function Clients({ onNavigate }: ClientsProps) {
               <ChevronRight size={20} />
             </button>
           </div>
-
-          
 
           <div className="text-center mt-10">
             <a

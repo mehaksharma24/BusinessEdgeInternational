@@ -12,4 +12,5 @@ export const banners = {
   clients: banner3,
   serviceDetail: banner2,
   login: banner1,
+  contact: banner1
 };

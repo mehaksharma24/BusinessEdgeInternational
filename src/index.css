@@ -25,23 +25,22 @@
   50%  { transform: scale(1.12); }
   100% { transform: scale(1);    }
 }
-/* Force mascot cursor on navbar and all interactive elements */
-nav, 
-nav *, 
-button, 
-button *, 
-a, 
-a *, 
-[role="menuitem"], 
-[role="button"], 
+nav,
+nav *,
+button,
+button *,
+a,
+a *,
+[role="menuitem"],
+[role="button"],
 [role="link"] {
-  cursor: url('/mascot1.png') 0 0, auto !important;
+  cursor: url('/Bee.png') 16 16, auto !important;
 }
 
-/* GLOBAL MASCOT CURSOR */
-body, 
-*, 
-*:hover, 
+body,
+*,
+*:hover,
 *:active {
-  cursor: url('/mascot1.png') 0 0, auto !important;
+  cursor: url('/Bee.png') 16 16, auto !important;
 }
+
