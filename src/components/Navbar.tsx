@@ -48,9 +48,18 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
       }`}
     >
       <div className="w-full px-0">
-        <div className="flex items-center justify-between h-28 pl-0 pr-6">
-          <button onClick={() => onNavigate('home')} className="flex-shrink-0">
-            <img src={logoTagline} alt="BEI Logo" className="h-28 w-auto" />
+        <div className="flex items-center justify-between h-28 px-0">
+
+          {/* ⭐ MAX SIZE LOGO — ONLY CHANGE HERE ⭐ */}
+          <button
+            onClick={() => onNavigate('home')}
+            className="ml-0 pl-0"
+          >
+            <img
+              src={logoTagline}
+              alt="BEI Logo"
+              className="h-35 w-[400px] object-contain"  // MAX WIDTH LOGO
+            />
           </button>
 
           {/* Desktop Nav */}

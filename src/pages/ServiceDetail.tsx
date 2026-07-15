@@ -208,7 +208,7 @@ const serviceData = [
   {
     id: 1,
     title: 'Branded Merch',
-    tagline: "Your brand belongs in people's hands.",
+    tagline: "Your brand belongs in people's hands!",
     intro: "We create merch they'll actually use — and every time they do, they think of you.",
     offerTitle: 'What We Offer',
     offers: [
@@ -227,7 +227,7 @@ const serviceData = [
   {
     id: 2,
     title: 'Apparel & Team Uniforms',
-    tagline: 'Look unified. Look professional. Look like you mean business.',
+    tagline: 'Look unified. Look professional. Look like you mean business!',
     intro: 'Custom apparel that builds team pride and makes a sharp, unforgettable impression.',
     offerTitle: 'What We Offer',
     offers: [
@@ -246,7 +246,7 @@ const serviceData = [
   {
     id: 3,
     title: 'Awards & Trophies',
-    tagline: 'People remember how you made them feel. Make it count.',
+    tagline: 'People remember how you made them feel. Make it count!',
     intro: 'Custom recognition pieces designed to drive performance and spark conversations.',
     offerTitle: 'What We Offer',
     offers: [
@@ -265,7 +265,7 @@ const serviceData = [
   {
     id: 4,
     title: 'Web & Offset Printing',
-    tagline: "From 50 copies to 50,000 — crisp, clean, and built to impress.",
+    tagline: "From 50 copies to 50,000 — crisp, clean, and built to impress!",
     intro: "Professional print materials that keep your brand in the room after you've left.",
     offerTitle: 'What We Offer',
     offers: [
@@ -284,7 +284,7 @@ const serviceData = [
   {
     id: 5,
     title: 'Signage & Displays',
-    tagline: 'BEI Sign Central — your one-stop shop for all your signage needs.',
+    tagline: 'BEI Sign Central — your one-stop shop for all your signage needs!',
     intro: 'We take care of everything from start to finish: design, permit drawings and applications, fabrication and installation.',
     offerTitle: 'What We Offer',
     offers: [
@@ -308,7 +308,7 @@ const serviceData = [
   {
     id: 6,
     title: 'Co-Packing & Kitting',
-    tagline: "You focus on growing. We'll handle the boxes.",
+    tagline: "You focus on growing. We'll handle the boxes!",
     intro: 'Scalable co-packing and kitting solutions from small batches to high volume.',
     offerTitle: 'What We Offer',
     offers: [
@@ -327,7 +327,7 @@ const serviceData = [
   {
     id: 7,
     title: 'Demos & Sampling Events',
-    tagline: 'Nothing sells like letting people experience it firsthand.',
+    tagline: 'Nothing sells like letting people experience it firsthand!',
     intro: 'In-store demos, sampling programs, and pop-up events with trained brand ambassadors.',
     offerTitle: 'What We Do',
     offers: [
@@ -346,7 +346,7 @@ const serviceData = [
   {
     id: 8,
     title: 'Custom Solutions',
-    tagline: "Got a big idea that doesn't fit a box? Good. That's our favorite kind.",
+    tagline: "Got a big idea that doesn't fit a box? Good. That's our favorite kind!",
     intro: 'End-to-end concept development and execution for one-of-a-kind products, packaging, and activations.',
     offerTitle: 'What We Do',
     offers: [
@@ -365,7 +365,7 @@ const serviceData = [
   {
     id: 9,
     title: 'Graphic Design',
-    tagline: 'Design that does the talking before you say a word.',
+    tagline: 'Design that does the talking before you say a word!',
     intro: 'Strong visuals sell before anyone reads a single word.',
     offerTitle: 'What We Offer',
     offers: [
@@ -384,7 +384,7 @@ const serviceData = [
   {
     id: 10,
     title: 'Website & Social Media Marketing',
-    tagline: 'Your online presence is working 24/7. Make sure it\'s working for you.',
+    tagline: 'Your online presence is working 24/7. Make sure it\'s working for you!',
     intro: 'Data-driven digital marketing that converts visitors into leads around the clock.',
     offerTitle: 'What We Offer',
     offers: [
@@ -463,6 +463,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
   <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h1 className="text-5xl sm:text-6xl font-extrabold text-white">
       {service.title}
+      
     </h1>
   </div>
 
@@ -515,13 +516,27 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
     <button
       key={item.id}
       onClick={() => onNavigate(`service-${item.id}`)}
-      className="flex flex-col items-center group w-[90px]"
+      className="flex flex-col items-center group w-[90px] transition-all duration-300"
     >
-      <div className="w-14 h-14 rounded-full border-2 border-orange-500 flex items-center justify-center text-orange-600 group-hover:bg-orange-50 transition">
+      <div className="
+        w-14 h-14 rounded-full border-2 border-orange-500 
+        flex items-center justify-center text-orange-600 
+        transition-all duration-300
+        group-hover:bg-orange-50 
+        group-hover:scale-125 
+        group-hover:shadow-lg 
+        group-hover:shadow-orange-300/40 
+        group-hover:-translate-y-1
+      ">
         <item.icon size={22} strokeWidth={2.6} />
       </div>
 
-      <span className="text-[11px] font-semibold mt-2 text-gray-800 group-hover:text-orange-600 transition text-center leading-tight">
+      <span className="
+        text-[11px] font-semibold mt-2 text-gray-800 
+        group-hover:text-orange-600 
+        transition-all duration-300
+        group-hover:scale-110
+      ">
         {item.label}
       </span>
     </button>
@@ -540,7 +555,15 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
               {/* INTRO */}
               <div className="fade-up" style={{ animationDelay: "0.4s" }}>
                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                <div
+  className="fade-up text-xl font-bold"
+  style={{ animationDelay: "0.4s" }}
+>
+  {service.tagline}
+</div>
+
                   {service.intro}
+                  
                 </p>
 
                 {/* OFFERS */}

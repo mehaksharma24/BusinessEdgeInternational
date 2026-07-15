@@ -1,4 +1,4 @@
-import { CheckCircle, Clock, Loader2, Mail, Phone } from "lucide-react";
+import { CheckCircle, Loader2, Mail, Phone } from "lucide-react";
 import React, { useState } from "react";
 
 import Footer from "../components/Footer";
@@ -103,9 +103,7 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
           <h1 className="text-5xl sm:text-6xl font-extrabold text-orange-400 mt-2">
             hear from you.
           </h1>
-          <p className="mt-5 text-blue-100 text-lg sm:text-xl max-w-xl mx-auto leading-relaxed font-semibold">
-            We'll get back to you within 1 business day.
-          </p>
+         
         </div>
       </section>
 
@@ -147,7 +145,7 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
               </div>
 
               {[
-                { icon: Clock, label: "Response Time", value: "Within 1 business day" },
+                
                 { icon: Mail, label: "Email Us", value: "info@thebiznessedge.com" },
                 { icon: Phone, label: "Call Us", value: "+1 (905) 595-0085" },
                
@@ -184,7 +182,7 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
                     Message Sent!
                   </h3>
                   <p className="text-gray-500 text-sm max-w-xs leading-relaxed mb-8 font-semibold">
-                    Thanks for reaching out. We'll get back to you within 1 business day.
+                    Thanks for reaching out!
                   </p>
                   <button
                     onClick={() => setSuccess(false)}

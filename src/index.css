@@ -34,13 +34,13 @@ a *,
 [role="menuitem"],
 [role="button"],
 [role="link"] {
-  cursor: url('/Bee.png') 16 16, auto !important;
+  cursor: url('/Bee1.png') 16 16, auto !important;
 }
 
 body,
 *,
 *:hover,
 *:active {
-  cursor: url('/Bee.png') 16 16, auto !important;
+  cursor: url('/Bee1.png') 16 16, auto !important;
 }
 
