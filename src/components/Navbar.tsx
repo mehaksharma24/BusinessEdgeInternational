@@ -50,15 +50,12 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
       <div className="w-full px-0">
         <div className="flex items-center justify-between h-28 px-0">
 
-          {/* ⭐ MAX SIZE LOGO — ONLY CHANGE HERE ⭐ */}
-          <button
-            onClick={() => onNavigate('home')}
-            className="ml-0 pl-0"
-          >
+          {/* Logo */}
+          <button onClick={() => onNavigate('home')} className="ml-0 pl-0">
             <img
               src={logoTagline}
               alt="BEI Logo"
-              className="h-35 w-[400px] object-contain"  // MAX WIDTH LOGO
+              className="h-35 w-[400px] object-contain"
             />
           </button>
 
@@ -78,7 +75,10 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                     }`}
                   >
                     Services
-                    <ChevronDown size={15} className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown
+                      size={15}
+                      className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`}
+                    />
                   </button>
 
                   {servicesOpen && (
@@ -90,7 +90,10 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                       {services.map((service, i) => (
                         <button
                           key={i}
-                          onClick={() => { onNavigate(`service-${i + 1}`); setServicesOpen(false); }}
+                          onClick={() => {
+                            onNavigate(`service-${i + 1}`);
+                            setServicesOpen(false);
+                          }}
                           className="w-full text-left px-5 py-2.5 text-sm font-medium text-gray-600 hover:text-orange-500 hover:bg-orange-50 transition-colors"
                         >
                           {service}
@@ -114,8 +117,11 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
               )
             )}
 
+            {/* ⭐ DIRECT LOGIN LINK (NO LOGIN PAGE) ⭐ */}
             <button
-              onClick={() => onNavigate('login')}
+              onClick={() => {
+                window.location.href = "https://products.thebiznessedge.com/signin.htm";
+              }}
               className="ml-3 px-5 py-2.5 bg-[#1a5fa8] text-white text-base font-extrabold rounded-lg hover:bg-[#154d8a] transition-all duration-200 shadow-sm hover:shadow-md opacity-0 group-hover:opacity-100"
             >
               Login
@@ -139,7 +145,10 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
             {navLinks.map((link) => (
               <button
                 key={link.page}
-                onClick={() => { onNavigate(link.page); setMenuOpen(false); }}
+                onClick={() => {
+                  onNavigate(link.page);
+                  setMenuOpen(false);
+                }}
                 className={`w-full text-left px-4 py-3 rounded-lg text-sm font-extrabold transition-colors ${
                   currentPage === link.page
                     ? 'text-orange-500 bg-orange-50'
@@ -149,8 +158,13 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                 {link.label}
               </button>
             ))}
+
+            {/* ⭐ MOBILE LOGIN DIRECT LINK ⭐ */}
             <button
-              onClick={() => { onNavigate('login'); setMenuOpen(false); }}
+              onClick={() => {
+                window.location.href = "https://products.thebiznessedge.com/signin.htm";
+                setMenuOpen(false);
+              }}
               className="w-full mt-2 px-4 py-3 bg-[#1a5fa8] text-white text-sm font-extrabold rounded-lg hover:bg-[#154d8a] transition-colors"
             >
               Login

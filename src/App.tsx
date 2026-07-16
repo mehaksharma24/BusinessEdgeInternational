@@ -4,7 +4,7 @@ import SplashScreen from './components/SplashScreen';
 import Clients from './pages/Clients';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
-import Login from './pages/Login';
+
 import ServiceDetail from './pages/ServiceDetail';
 import Services from './pages/Services';
 import Team from './pages/Team';
