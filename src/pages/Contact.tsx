@@ -146,8 +146,8 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
 
               {[
                 
-                { icon: Mail, label: "Email Us", value: "info@thebiznessedge.com" },
-                { icon: Phone, label: "Call Us", value: "+1 (905) 595-0085" },
+                { icon: Mail, label: "Email Us", value: "sales@thebiznessedge.com" },
+                { icon: Phone, label: "Call Us", value: "+1 (905) 864-8065" },
                
               ].map(({ icon: Icon, label, value }) => (
                 <div
