@@ -48,7 +48,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
       }`}
     >
       <div className="w-full px-0">
-        <div className="flex items-center justify-between h-28 px-0">
+        <div className="flex items-center justify-between h-28 px-12">
 
           {/* Logo */}
           <button onClick={() => onNavigate('home')} className="ml-0 pl-0">

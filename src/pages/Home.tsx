@@ -30,78 +30,85 @@ export default function Home({ onNavigate }: HomeProps) {
   return (
     <div className="min-h-screen">
 
-      {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center animate-zoom-pulse"
-          style={{ backgroundImage: `url(${banners.home})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d3d73]/85 via-[#0d3d73]/60 to-transparent" />
+{/* HERO SECTION */}
+<section className="relative min-h-screen flex items-center overflow-hidden">
+  <div
+    className="absolute inset-0 bg-cover bg-center animate-zoom-pulse"
+    style={{ backgroundImage: `url(${banners.home})` }}
+  />
+  <div className="absolute inset-0 bg-gradient-to-r from-[#0d3d73]/85 via-[#0d3d73]/60 to-transparent" />
 
-        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-10 lg:px-16 pt-28 text-center">
-          <div className="max-w-[1200px] mx-auto">
-            <h1
-              className="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-white leading-[1.1] tracking-wide mb-8 whitespace-nowrap"
-              style={{ textShadow: '3px 3px 6px #243d7d' }}
-            >
-              Where ideas become
-              <br />
-              <span
-                className="text-orange-400"
-                style={{ textShadow: '3px 3px 6px #243d7d' }}
-              >
-                impactful products.
-              </span>
-            </h1>
+  <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-10 lg:px-16 pt-28 text-center">
+    <div className="max-w-[1200px] mx-auto">
+      <h1
+        className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-wide mb-8 whitespace-nowrap"
+        style={{ textShadow: '3px 3px 6px #243d7d' }}
+      >
+        Where ideas become
+        <br />
+        <span
+          className="text-orange-400"
+          style={{ textShadow: '3px 3px 6px #243d7d' }}
+        >
+          impactful products.
+        </span>
+      </h1>
 
-            <p
-              className="text-2xl sm:text-3xl lg:text-4xl text-blue-100 mb-14 leading-relaxed tracking-wide font-semibold"
-              style={{ textShadow: '2px 2px 4px #243d7d' }}
-            >
-              Over 20 years of global experience turning ideas into high-impact brand experiences.
-            </p>
+      <p
+        className="text-lg sm:text-xl lg:text-2xl text-blue-100 mb-14 leading-relaxed tracking-wide font-semibold"
+        style={{ textShadow: '2px 2px 4px #243d7d' }}
+      >
+        Over 20 years of global experience turning ideas into
+        <br />
+        high-impact brand experiences.
+      </p>
 
-            <div className="flex justify-center">
-              <button
-                onClick={() => onNavigate('services')}
-                className="group flex items-center gap-3 px-12 py-6 bg-orange-500 text-white text-2xl font-extrabold rounded-2xl hover:bg-orange-400 transition-all duration-300 shadow-xl hover:shadow-orange-500/40 hover:shadow-2xl hover:-translate-y-1"
-              >
-                Explore Services
-                <ArrowRight size={30} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-          </div>
-        </div>
+      <div className="flex justify-center">
+        <button
+          onClick={() => onNavigate('services')}
+          className="group flex items-center gap-3 px-12 py-6 bg-orange-500 text-white text-xl font-extrabold rounded-2xl hover:bg-orange-400 transition-all duration-300 shadow-xl hover:shadow-orange-500/40 hover:shadow-2xl hover:-translate-y-1"
+        >
+          Explore Services
+          <ArrowRight size={26} className="group-hover:translate-x-1 transition-transform" />
+        </button>
+      </div>
+    </div>
+  </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-          <div className="w-[3px] h-12 bg-white/70 rounded-full" />
-          <div className="w-4 h-4 rounded-full bg-white/80" />
-        </div>
-      </section>
+  <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+    <div className="w-[3px] h-12 bg-white/70 rounded-full" />
+    <div className="w-4 h-4 rounded-full bg-white/80" />
+  </div>
+</section>
+
+
+
+
 
       {/* ABOUT US SECTION */}
       <section className="py-24 bg-white">
         <div className="max-w-[1600px] mx-auto px-8 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-            {/* TEXT SIDE */}
-            <div>
-              <p className="text-orange-500 font-medium text-2xl tracking-widest mb-4">
-                About Us
-              </p>
+        {/* TEXT SIDE */}
+<div>
+  <p className="text-orange-500 font-bold text-4xl tracking-widest mb-4">
+    About Us
+  </p>
 
-              <h2 className="text-2xl font-semibold text-gray-900 leading-snug mb-6">
-                We make brands <span className="text-[#1a5fa8]">impossible</span> to ignore.
-              </h2>
+  <h2 className="text-2xl font-normal text-gray-900 leading-snug mb-6 font-montserrat">
+    We make brands <span className="text-[#1a5fa8]">impossible</span> to ignore.
+  </h2>
 
-              <p className="text-2xl font-medium text-gray-700 leading-relaxed mb-6">
-                Business Edge International (BEI) helps brands show up better, everywhere.
-              </p>
+  <p className="text-2xl font-normal text-gray-700 leading-relaxed mb-6 font-montserrat">
+    Business Edge International (BEI) helps brands show up better, everywhere.
+  </p>
 
-              <p className="text-2xl font-medium text-gray-700 leading-relaxed mb-8">
-                With over 20 years of global experience, we turn ideas into high-impact brand experiences across merch, apparel, print, digital, and experiential. From concept to execution, we handle every detail so your brand connects, stands out, and delivers real results.
-              </p>
-            </div>
+  <p className="text-2xl font-normal text-gray-700 leading-relaxed mb-8 font-montserrat">
+    With over 20 years of global experience, we turn ideas into high-impact brand experiences across merch, apparel, print, digital, and experiential. From concept to execution, we handle every detail so your brand connects, stands out, and delivers real results.
+  </p>
+</div>
+
 
             {/* VIDEO SIDE */}
             <div className="relative">
