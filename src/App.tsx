@@ -4,12 +4,9 @@ import SplashScreen from './components/SplashScreen';
 import Clients from './pages/Clients';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
-
 import ServiceDetail from './pages/ServiceDetail';
 import Services from './pages/Services';
 import Team from './pages/Team';
-
-
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -17,10 +14,23 @@ export default function App() {
 
   const handleSplashComplete = useCallback(() => setShowSplash(false), []);
 
+  // ⭐ UPDATED navigate() — now adds browser history entries
   const navigate = (page: string) => {
+    window.history.pushState({ page }, '', `/${page}`);
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  // ⭐ NEW: Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePop = (event: PopStateEvent) => {
+      const page = event.state?.page || 'home';
+      setCurrentPage(page);
+    };
+
+    window.addEventListener('popstate', handlePop);
+    return () => window.removeEventListener('popstate', handlePop);
+  }, []);
 
   useEffect(() => {
     if (currentPage === 'search') {
@@ -36,13 +46,14 @@ export default function App() {
     if (currentPage === 'team') return <Team onNavigate={navigate} />;
     if (currentPage === 'services') return <Services onNavigate={navigate} />;
     if (currentPage === 'contact') return <Contact onNavigate={navigate} />;
-
     if (currentPage === 'clients') return <Clients onNavigate={navigate} />;
     if (currentPage === 'login') return <Login onNavigate={navigate} />;
+
     if (currentPage.startsWith('service-')) {
       const id = parseInt(currentPage.replace('service-', ''), 10);
       return <ServiceDetail serviceId={id} onNavigate={navigate} />;
     }
+
     return <Home onNavigate={navigate} />;
   };
 
