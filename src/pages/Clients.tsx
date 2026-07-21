@@ -59,8 +59,8 @@ function MarqueeRow({ logos, reverse = false }: { logos: typeof marqueeLogos; re
         }}
       >
         {doubled.map((logo, i) => (
-          <div key={i} className="flex-shrink-0 w-44 flex items-center justify-center h-20 transition-all duration-300">
-            <LogoImg src={logo.src} name={logo.name} className="max-h-14 max-w-[160px] object-contain" />
+          <div key={i} className="flex-shrink-0 w-56 flex items-center justify-center h-20 transition-all duration-300">
+            <LogoImg src={logo.src} name={logo.name} className="max-h-28 max-w-[260px] object-contain"/>
           </div>
         ))}
       </div>

@@ -148,27 +148,27 @@ import GD_10 from '../assets/GD_10.png';
 
 // IMAGE ARRAYS
 const brandedMerchImages = [
-  BM_01, BM_02, BM_03, BM_04, BM_05, BM_06, BM_07, BM_08, BM_09, BM_10,
-  BM_11, BM_12, BM_13, BM_14, BM_15, BM_16, BM_17, BM_18, BM_20,
+  BM_11, BM_01, BM_02, BM_03, BM_04, BM_05, BM_06, BM_07, BM_08, BM_09, BM_10,
+  BM_12, BM_13, BM_14, BM_15, BM_16, BM_17, BM_18, BM_20,
   BM_21, BM_22, BM_23, BM_24, BM_25, BM_26, BM_27,  BM_29, BM_30, BM_31
 ];
 
 const apparelImages = [
-  AP_01, AP_02, AP_03, AP_04, AP_05, AP_06, AP_07, AP_08, AP_09, AP_10,
+  AP_08, AP_01, AP_02, AP_03, AP_04, AP_05, AP_06, AP_07,  AP_09, AP_10,
   AP_11, AP_12, AP_13, AP_14, AP_15
 ];
 
 const awardsImages = [
-  AW_01, AW_02, AW_03, AW_04, AW_05, AW_06, AW_07, AW_08, AW_09, AW_10, AW_11
+   AW_11, AW_01, AW_02, AW_03, AW_04, AW_05, AW_06, AW_07, AW_08, AW_09, AW_10
 ];
 
 const printingImages = [
-  PR_01, PR_02, PR_03, PR_04, PR_05, PR_06, PR_07, PR_08, PR_09, PR_10,
+  PR_05,PR_01, PR_02, PR_03, PR_04,  PR_06, PR_07, PR_08, PR_09, PR_10,
   PR_11, PR_12, PR_13, PR_14, PR_15
 ];
 
 const signageImages = [
-  SC_01, SC_02, SC_03, SC_04, SC_05, SC_06, SC_07, SC_08, SC_09, SC_10,
+  SC_06,SC_01, SC_02, SC_03, SC_04, SC_05,  SC_07, SC_08, SC_09, SC_10,
   SC_11, SC_12, SC_13, SC_14, SC_15
 ];
 
@@ -177,16 +177,16 @@ const copackingImages = [
 ];
 
 const demosImages = [
-  EV_01, EV_02, EV_03, EV_04, EV_05, EV_06, EV_07, EV_08, EV_09, EV_10,
-  EV_11, EV_12, EV_13
+  EV_13, EV_01, EV_02, EV_03, EV_04, EV_05, EV_06, EV_07, EV_08, EV_09, EV_10,
+  EV_11, EV_12
 ];
 
 const customSolutionsImages = [
-  CS_01, CS_02, CS_03, CS_04, CS_05, CS_06, CS_07, CS_08
+  CS_03, CS_01, CS_02, CS_04, CS_05, CS_06, CS_07, CS_08
 ];
 
 const graphicDesignImages = [
-  GD_01, GD_02, GD_03, GD_04, GD_05, GD_06, GD_07, GD_08, GD_09, GD_10
+  GD_05, GD_01, GD_02, GD_03, GD_04,  GD_06, GD_07, GD_08, GD_09, GD_10
 ];
 
 // SERVICE GALLERIES
@@ -439,25 +439,35 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
   {/* Gradient Overlay */}
   <div className="absolute inset-0 bg-gradient-to-br from-[#0d3d73]/90 to-[#1a5fa8]/80" />
 
-  {/* Floating Blur Orbs */}
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <div
-      className="absolute w-[900px] h-[900px] rounded-full opacity-[0.12] blur-3xl animate-slowFloat"
-      style={{
-        background: "radial-gradient(circle, #1a5fa8 0%, transparent 70%)",
-        top: "-20%",
-        right: "-10%",
-      }}
-    />
-    <div
-      className="absolute w-[700px] h-[700px] rounded-full opacity-[0.10] blur-3xl animate-slowFloatReverse"
-      style={{
-        background: "radial-gradient(circle, #4aa3ff 0%, transparent 70%)",
-        bottom: "5%",
-        left: "-10%",
-      }}
-    />
-  </div>
+
+{/* Floating Blur Orbs */}
+<div className="flex flex-wrap justify-center gap-10">
+
+
+  {/* TOP RIGHT */}
+  <div
+    className="absolute w-[1200px] h-[1200px] rounded-full opacity-[0.12] blur-3xl animate-slowFloat"
+    style={{
+      background: "radial-gradient(circle, #1a5fa8 0%, transparent 70%)",
+      top: "-50%",
+      right: "-50%",
+    }}
+  />
+
+  {/* BOTTOM LEFT */}
+  <div
+    className="absolute w-[1000px] h-[1000px] rounded-full opacity-[0.10] blur-3xl animate-slowFloatReverse"
+    style={{
+      background: "radial-gradient(circle, #4aa3ff 0%, transparent 70%)",
+      bottom: "-50%",
+      left: "-50%",
+    }}
+  />
+</div>
+
+
+
+
 
   {/* Text */}
   <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -466,6 +476,9 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
       
     </h1>
   </div>
+
+
+
 
   {/* Animations */}
   <style>{`
@@ -500,48 +513,38 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
 </section>
 
 {/* Service Quick Links */}
-<div className="w-full py-4 flex items-center justify-center gap-5 overflow-x-auto whitespace-nowrap">
+{/* Service Quick Links */}
+<div className="w-full py-4 flex items-start justify-center gap-5 overflow-x-auto">
   {[
-    { id: 1, icon: Tag, label: "Merch" },
-    { id: 2, icon: Shirt, label: "Uniforms" },
-    { id: 3, icon: Trophy, label: "Trophies" },
-    { id: 4, icon: Printer, label: "Offset Printing" },
-    { id: 5, icon: SignpostBig, label: "Signage" },
-    { id: 6, icon: Package, label: "Kitting" },
-    { id: 7, icon: Users, label: "Sampling Events" },
-    { id: 8, icon: Lightbulb, label: "Custom" },
+    { id: 1, icon: Tag, label: "Branded Merch" },
+    { id: 2, icon: Shirt, label: "Apparel & Team Uniforms" },
+    { id: 3, icon: Trophy, label: "Awards & Trophies" },
+    { id: 4, icon: Printer, label: "Web & Offset Printing" },
+    { id: 5, icon: SignpostBig, label: "Signage & Displays" },
+    { id: 6, icon: Package, label: "Co-packing & Kitting" },
+    { id: 7, icon: Users, label: "Demos & Sampling Events" },
+    { id: 8, icon: Lightbulb, label: "Custom Solutions" },
     { id: 9, icon: Palette, label: "Graphic Design" },
-    { id: 10, icon: Globe, label: "Websites & Media" },
+    { id: 10, icon: Globe, label: "Website & Social Media Marketing" },
   ].map((item) => (
     <button
       key={item.id}
       onClick={() => onNavigate(`service-${item.id}`)}
-      className="flex flex-col items-center group w-[90px] transition-all duration-300"
+      className="flex flex-col items-center group flex-1 min-w-[90px] transition-all duration-300"
     >
-      <div className="
-        w-14 h-14 rounded-full border-2 border-orange-500 
-        flex items-center justify-center text-orange-600 
-        transition-all duration-300
-        group-hover:bg-orange-50 
-        group-hover:scale-125 
-        group-hover:shadow-lg 
-        group-hover:shadow-orange-300/40 
-        group-hover:-translate-y-1
-      ">
-        <item.icon size={22} strokeWidth={2.6} />
+      <div
+        className="w-14 h-14 rounded-full border-2 border-orange-500 flex items-center justify-center text-orange-600 transition-all duration-300 group-hover:bg-orange-50 group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-orange-300/40 group-hover:-translate-y-1"
+      >
+        <item.icon className="w-8 h-8" strokeWidth={2.6} />
       </div>
 
-      <span className="
-        text-[11px] font-semibold mt-2 text-gray-800 
-        group-hover:text-orange-600 
-        transition-all duration-300
-        group-hover:scale-110
-      ">
+      <span className="text-[11px] font-semibold mt-2 text-gray-800 group-hover:text-orange-600 transition-all duration-300 group-hover:scale-110 text-center leading-tight max-w-[110px]">
         {item.label}
       </span>
     </button>
   ))}
 </div>
+
 
       {/* MAIN CONTENT */}
       <section className="py-16">
@@ -554,17 +557,16 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
 
               {/* INTRO */}
               <div className="fade-up" style={{ animationDelay: "0.4s" }}>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                <p className="text-xl text-orange-500 leading-relaxed mb-6">
                 <div
-  className="fade-up text-xl font-bold"
+  className="fade-up text-xl font-bold mb-5"
   style={{ animationDelay: "0.4s" }}
 >
   {service.tagline}
-</div>
-
-                  {service.intro}
-                  
-                </p>
+</div><span className="text-black">
+    {service.intro}
+  </span>
+</p>
 
                 {/* OFFERS */}
                 <h2 className="text-2xl font-extrabold text-gray-900 mb-5 fade-up" style={{ animationDelay: "0.55s" }}>
@@ -582,7 +584,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
                         <div className="w-2 h-2 rounded-full bg-[#1a5fa8]" />
                       </div>
 
-                      <p className="text-gray-700">
+                      <p className="text-xl text-gray-700">
                         {offer.text}{' '}
                         {offer.link && (
                           <a
@@ -646,7 +648,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
                       style={{ animationDelay: `${1.4 + i * 0.15}s` }}
                     >
                       <CheckCircle size={20} className="text-[#1a5fa8] flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-700 font-medium text-sm">{why}</p>
+                      <p className="text-gray-700 font-medium text-lg">{why}</p>
                     </li>
                     
                   ))}

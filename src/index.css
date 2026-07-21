@@ -44,3 +44,6 @@ body,
   cursor: url('/Bee1.png') 16 16, auto !important;
 }
 
+body, * {
+  font-family: 'Montserrat', sans-serif !important;
+}

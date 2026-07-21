@@ -47,7 +47,7 @@ export default function Home({ onNavigate }: HomeProps) {
         Where ideas become
         <br />
         <span
-          className="text-orange-400"
+          className="text-orange-400 font-extrabold"
           style={{ textShadow: '3px 3px 6px #243d7d' }}
         >
           impactful products.
@@ -82,9 +82,6 @@ export default function Home({ onNavigate }: HomeProps) {
 </section>
 
 
-
-
-
       {/* ABOUT US SECTION */}
       <section className="py-24 bg-white">
         <div className="max-w-[1600px] mx-auto px-8 lg:px-12">
@@ -92,9 +89,12 @@ export default function Home({ onNavigate }: HomeProps) {
 
         {/* TEXT SIDE */}
 <div>
-  <p className="text-orange-500 font-bold text-4xl tracking-widest mb-4">
-    About Us
-  </p>
+<p className="text-orange-500 font-bold text-5xl mb-4">
+  About Us
+</p>
+
+
+
 
   <h2 className="text-2xl font-normal text-gray-900 leading-snug mb-6 font-montserrat">
     We make brands <span className="text-[#1a5fa8]">impossible</span> to ignore.

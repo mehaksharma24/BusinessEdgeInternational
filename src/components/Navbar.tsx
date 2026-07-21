@@ -63,10 +63,13 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
           <div className="hidden lg:flex items-center gap-1 group">
             {navLinks.map((link) =>
               link.page === 'services' ? (
-                <div key={link.page} className="relative">
+                <div
+                  key={link.page}
+                  className="relative"
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
+                >
                   <button
-                    onMouseEnter={() => setServicesOpen(true)}
-                    onMouseLeave={() => setServicesOpen(false)}
                     onClick={() => onNavigate('services')}
                     className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-base font-extrabold tracking-wide transition-all duration-200 ${
                       currentPage === 'services' || currentPage.startsWith('service-')
@@ -83,9 +86,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
 
                   {servicesOpen && (
                     <div
-                      onMouseEnter={() => setServicesOpen(true)}
-                      onMouseLeave={() => setServicesOpen(false)}
-                      className="absolute top-full left-0 w-72 bg-white shadow-xl rounded-xl border border-gray-100 py-3 mt-1"
+                      className="absolute top-full left-0 w-72 bg-white shadow-xl rounded-xl border border-gray-100 py-3"
                     >
                       {services.map((service, i) => (
                         <button
@@ -117,7 +118,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
               )
             )}
 
-            {/* ⭐ DIRECT LOGIN LINK (NO LOGIN PAGE) ⭐ */}
+            {/* Login */}
             <button
               onClick={() => {
                 window.location.href = "https://products.thebiznessedge.com/signin.htm";
@@ -159,7 +160,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
               </button>
             ))}
 
-            {/* ⭐ MOBILE LOGIN DIRECT LINK ⭐ */}
+            {/* Mobile Login */}
             <button
               onClick={() => {
                 window.location.href = "https://products.thebiznessedge.com/signin.htm";
