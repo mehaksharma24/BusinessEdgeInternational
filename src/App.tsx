@@ -24,8 +24,10 @@ export default function App() {
   // ⭐ NEW: Handle browser back/forward buttons
   useEffect(() => {
     const handlePop = (event: PopStateEvent) => {
-      const page = event.state?.page || 'home';
-      setCurrentPage(page);
+      const [currentPage, setCurrentPage] = useState(
+        () => window.location.pathname.slice(1) || 'home'
+      );
+      
     };
 
     window.addEventListener('popstate', handlePop);
