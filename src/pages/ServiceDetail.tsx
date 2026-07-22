@@ -514,7 +514,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
 
 {/* Service Quick Links */}
 {/* Service Quick Links */}
-<div className="w-full py-4 flex items-start justify-center gap-5 overflow-x-auto">
+<div className="max-w-7xl xl:max-w-[1500px] mx-auto px-2 sm:px-4 lg:px-6 py-4 flex items-start justify-between gap-3 overflow-x-auto">
   {[
     { id: 1, icon: Tag, label: "Branded Merch" },
     { id: 2, icon: Shirt, label: "Apparel & Team Uniforms" },
@@ -530,7 +530,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
     <button
       key={item.id}
       onClick={() => onNavigate(`service-${item.id}`)}
-      className="flex flex-col items-center group flex-1 min-w-[90px] transition-all duration-300"
+      className="flex flex-col items-center group min-w-[90px] transition-all duration-300"
     >
       <div
         className="w-14 h-14 rounded-full border-2 border-orange-500 flex items-center justify-center text-orange-600 transition-all duration-300 group-hover:bg-orange-50 group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-orange-300/40 group-hover:-translate-y-1"
@@ -636,7 +636,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
                 className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-7 border border-blue-100 fade-up"
                 style={{ animationDelay: "1.3s" }}
               >
-                <h2 className="text-xl font-extrabold text-gray-900 mb-5">
+                <h2 className="text-2xl font-extrabold text-gray-900 mb-5">
                   {service.whyTitle}
                 </h2>
 
@@ -647,8 +647,8 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
                       className="flex items-start gap-3 fade-up"
                       style={{ animationDelay: `${1.4 + i * 0.15}s` }}
                     >
-                      <CheckCircle size={20} className="text-[#1a5fa8] flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-700 font-medium text-lg">{why}</p>
+                      <CheckCircle size={20} className="text-[#1a5fa8] flex-shrink-0 mt-1" />
+                      <p className="text-gray-700 font-medium text-xl">{why}</p>
                     </li>
                     
                   ))}

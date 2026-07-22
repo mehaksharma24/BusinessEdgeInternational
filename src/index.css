@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +10,7 @@
   }
 
   body {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
   }
 }
 
@@ -46,4 +46,17 @@ body,
 
 body, * {
   font-family: 'Montserrat', sans-serif !important;
+}
+
+h1, h2 {
+  font-weight: 800 !important;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 700 !important;
+}
+
+/* Headings explicitly marked font-normal keep body-text weight */
+.font-normal {
+  font-weight: 400 !important;
 }

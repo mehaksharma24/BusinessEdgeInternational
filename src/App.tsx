@@ -10,24 +10,21 @@ import Team from './pages/Team';
 
 export default function App() {
   const [showSplash, setShowSplash] = useState(true);
-  const [currentPage, setCurrentPage] = useState('home');
+  const [currentPage, setCurrentPage] = useState(
+    () => window.location.pathname.slice(1) || 'home'
+  );
 
   const handleSplashComplete = useCallback(() => setShowSplash(false), []);
 
-  // ⭐ UPDATED navigate() — now adds browser history entries
   const navigate = (page: string) => {
     window.history.pushState({ page }, '', `/${page}`);
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // ⭐ NEW: Handle browser back/forward buttons
   useEffect(() => {
-    const handlePop = (event: PopStateEvent) => {
-      const [currentPage, setCurrentPage] = useState(
-        () => window.location.pathname.slice(1) || 'home'
-      );
-      
+    const handlePop = () => {
+      setCurrentPage(window.location.pathname.slice(1) || 'home');
     };
 
     window.addEventListener('popstate', handlePop);
@@ -39,9 +36,10 @@ export default function App() {
       window.open('https://products.thebiznessedge.com/', '_blank', 'noopener,noreferrer');
       setCurrentPage('home');
     }
+    if (currentPage === 'login') {
+      window.location.href = 'https://products.thebiznessedge.com/signin.htm';
+    }
   }, [currentPage]);
-
-  const hideNavbar = currentPage === 'login';
 
   const renderPage = () => {
     if (currentPage === 'home') return <Home onNavigate={navigate} />;
@@ -49,7 +47,6 @@ export default function App() {
     if (currentPage === 'services') return <Services onNavigate={navigate} />;
     if (currentPage === 'contact') return <Contact onNavigate={navigate} />;
     if (currentPage === 'clients') return <Clients onNavigate={navigate} />;
-    if (currentPage === 'login') return <Login onNavigate={navigate} />;
 
     if (currentPage.startsWith('service-')) {
       const id = parseInt(currentPage.replace('service-', ''), 10);
@@ -62,7 +59,7 @@ export default function App() {
   return (
     <div className="font-sans antialiased">
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
-      {!hideNavbar && <Navbar currentPage={currentPage} onNavigate={navigate} />}
+      <Navbar currentPage={currentPage} onNavigate={navigate} />
       {renderPage()}
     </div>
   );
