@@ -1,4 +1,20 @@
 {
-    "rewrites": [{ "source": "/(.*)", "destination": "/" }]
-  }
-  
+  "redirects": [
+    { "source": "/:slug(what-we-do|whatwedo|our-services)\\.htm", "destination": "/services", "permanent": true },
+    { "source": "/:slug(what-we-do|whatwedo|our-services)", "destination": "/services", "permanent": true },
+    { "source": "/:slug(our-clients|ourclients|clients|testimonials)\\.htm", "destination": "/clients", "permanent": true },
+    { "source": "/:slug(our-clients|ourclients|testimonials)", "destination": "/clients", "permanent": true },
+    { "source": "/:slug(lets-talk|letstalk|contact-us|contactus|contact)\\.htm", "destination": "/contact", "permanent": true },
+    { "source": "/:slug(lets-talk|letstalk|contact-us|contactus)", "destination": "/contact", "permanent": true },
+    { "source": "/:slug(who-we-are|whoweare|about-us|aboutus|about|our-team)\\.htm", "destination": "/team", "permanent": true },
+    { "source": "/:slug(who-we-are|whoweare|about-us|aboutus|about)", "destination": "/team", "permanent": true },
+    { "source": "/:slug(why-us|whyus|home|index)\\.htm", "destination": "/", "permanent": true },
+    { "source": "/:slug(why-us|whyus)", "destination": "/", "permanent": true },
+    { "source": "/:slug(signin|login)\\.htm", "destination": "https://products.thebiznessedge.com/signin.htm", "permanent": true },
+    { "source": "/:slug(deals|search-for-promotional-ideas|promotional-ideas|products|browse-products)\\.htm", "destination": "https://products.thebiznessedge.com/", "permanent": true },
+    { "source": "/:slug(deals|search-for-promotional-ideas|promotional-ideas|browse-products)", "destination": "https://products.thebiznessedge.com/", "permanent": true },
+    { "source": "/:page*\\.htm", "destination": "/", "permanent": true },
+    { "source": "/:page*\\.html", "destination": "/", "permanent": true }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+}
