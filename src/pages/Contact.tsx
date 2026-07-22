@@ -94,13 +94,13 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
         <div className="absolute inset-0 bg-gradient-to-br from-[#0d3d73]/90 to-[#1a5fa8]/80" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-orange-300 font-semibold text-sm uppercase tracking-widest mb-4">
+          <p className="text-orange-300 font-semibold font-montserrat text-sm uppercase tracking-widest mb-4">
             Get In Touch
           </p>
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-white">
+          <h1 className="text-5xl sm:text-6xl font-montserrat font-extrabold text-white">
             We'd love to
           </h1>
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-orange-400 mt-2">
+          <h1 className="text-5xl sm:text-6xl font-montserrat font-extrabold text-orange-400 mt-2">
             hear from you.
           </h1>
          
@@ -135,10 +135,10 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
             {/* LEFT — info panel */}
             <div className="lg:col-span-2 space-y-5">
               <div>
-                <h2 className="text-2xl font-extrabold text-gray-900 mb-2">
+                <h2 className="text-2xl font-montserrat font-extrabold text-gray-900 mb-2">
                   Let's talk business.
                 </h2>
-                <p className="text-gray-500 text-sm leading-relaxed font-semibold">
+                <p className="text-gray-500 text-sm font-montserrat leading-relaxed font-semibold">
                   Have a project in mind? Want to place an order or just ask a question?
                   Fill out the form and our team will be in touch.
                 </p>
@@ -154,11 +154,11 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
                   key={label}
                   className="flex items-start gap-4 p-4 bg-white/80 backdrop-blur-sm rounded-xl border border-orange-200 shadow-sm"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#1a5fa8]/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl font-montserrat bg-[#1a5fa8]/10 flex items-center justify-center flex-shrink-0">
                     <Icon size={18} className="text-[#1a5fa8]" />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-400 uppercase tracking-wider mb-0.5 font-bold">
+                    <p className="text-xs font-montserrat text-gray-400 uppercase tracking-wider mb-0.5 font-bold">
                       {label}
                     </p>
                     <p className="text-gray-800 text-sm font-bold">
@@ -178,15 +178,15 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
                   <div className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mb-6">
                     <CheckCircle size={40} className="text-green-500" />
                   </div>
-                  <h3 className="text-2xl font-extrabold text-gray-900 mb-3">
+                  <h3 className="text-2xl font-extrabold font-montserrat text-gray-900 mb-3">
                     Message Sent!
                   </h3>
-                  <p className="text-gray-500 text-sm max-w-xs leading-relaxed mb-8 font-semibold">
+                  <p className="text-gray-500 text-sm max-w-xs font-montserrat leading-relaxed mb-8 font-semibold">
                     Thanks for reaching out!
                   </p>
                   <button
                     onClick={() => setSuccess(false)}
-                    className="px-6 py-2.5 bg-[#1a5fa8] text-white rounded-xl text-sm font-bold hover:bg-[#164f8a] transition-colors"
+                    className="px-6 py-2.5 bg-[#1a5fa8] font-montserrat text-white rounded-xl text-sm font-bold hover:bg-[#164f8a] transition-colors"
                   >
                     Send Another Message
                   </button>
@@ -194,11 +194,11 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
               ) : (
                 /* ── FORM ── */
                 <>
-                  <div className="px-8 pt-8 pb-6 border-b border-gray-100">
+                  <div className="px-8 pt-8 pb-6 border-b font-montserrat border-gray-100">
                     <h3 className="text-xl font-extrabold text-gray-900">
                       Send a Message
                     </h3>
-                    <p className="text-gray-400 text-sm mt-1 font-semibold">
+                    <p className="text-gray-400 text-sm font-montserrat mt-1 font-semibold">
                       All fields are required.
                     </p>
                   </div>
@@ -208,7 +208,7 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
                     {/* Full Name + Email */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                        <label className="block text-xs font-bold  font-montserrat text-gray-500 uppercase tracking-wider mb-2">
                           Full Name
                         </label>
                         <input
@@ -224,7 +224,7 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                        <label className="block text-xs font-bold font-montserrat text-gray-500 uppercase tracking-wider mb-2">
                           Email
                         </label>
                         <input
@@ -242,7 +242,7 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                      <label className="block text-xs font-bold font-montserrat text-gray-500 uppercase tracking-wider mb-2">
                         Inquiry Type
                       </label>
                       <div className="flex flex-wrap gap-2">
@@ -264,7 +264,7 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
                         ))}
                       </div>
                       {typeError && (
-                        <p className="text-red-500 text-xs font-semibold mt-1.5">Please select an inquiry type.</p>
+                        <p className="text-red-500 text-xs font-montserrat font-semibold mt-1.5">Please select an inquiry type.</p>
                       )}
                       <select
                         name="type"
@@ -284,10 +284,10 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
                     {/* Message */}
                     <div>
                       <div className="flex justify-between items-center mb-2">
-                        <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider">
+                        <label className="block text-xs font-bold font-montserrat text-gray-500 uppercase tracking-wider">
                           Message
                         </label>
-                        <span className={`text-xs font-bold transition-colors ${formData.message.length > 0 ? "text-[#1a5fa8]" : "text-gray-300"}`}>
+                        <span className={`text-xs font-montserrat font-bold transition-colors ${formData.message.length > 0 ? "text-[#1a5fa8]" : "text-gray-300"}`}>
                           {formData.message.length} chars
                         </span>
                       </div>
@@ -308,7 +308,7 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-4 rounded-xl font-extrabold text-[15px] text-white bg-[#1a5fa8] hover:bg-[#164f8a] active:scale-[0.98] disabled:opacity-60 transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
+                      className="w-full py-4 rounded-xl font-montserrat font-extrabold text-[15px] text-white bg-[#1a5fa8] hover:bg-[#164f8a] active:scale-[0.98] disabled:opacity-60 transition-all duration-200 flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
                     >
                       {loading ? (
                         <>
