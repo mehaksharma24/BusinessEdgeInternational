@@ -400,14 +400,15 @@ const serviceData = [
     ],
   },
 ];
-
+<section className="relative pt-40 pb-25 overflow-hidden"></section>
 // COMPONENT
 export default function ServiceDetail({ serviceId, onNavigate }) {
   const service = serviceData.find((s) => s.id === serviceId);
 
   if (!service) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="relative w-full h-[300px]  flex items-end justify-center pb-10 pt-24">
+
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Service not found</h2>
           <button
@@ -421,14 +422,15 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
     );
   }
 
+
   const gallery = serviceGalleries[service.id] ?? [];
   const prevId = service.id > 1 ? service.id - 1 : null;
   const nextId = service.id < serviceData.length ? service.id + 1 : null;
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pt-28">
 
-<section className="relative pt-40 pb-28 overflow-hidden">
+<section className="relative py-32 overflow-hidden">
 
   {/* Background Image */}
   <div
@@ -469,14 +471,13 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
 
 
 
-  {/* Text */}
-  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h1 className="text-5xl sm:text-6xl font-extrabold text-white">
-      {service.title}
-      
-    </h1>
-  </div>
-
+{/* Text */}
+<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h1 className="text-2xl sm:text-6xl font-extrabold text-white leading-none">
+  {service.title}
+</h1>
+  
+</div>
 
 
 
@@ -533,9 +534,9 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
       className="flex flex-col items-center group flex-1 min-w-[90px] transition-all duration-300"
     >
       <div
-        className="w-14 h-14 rounded-full border-2 border-orange-500 flex items-center justify-center text-orange-600 transition-all duration-300 group-hover:bg-orange-50 group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-orange-300/40 group-hover:-translate-y-1"
+        className="w-14 h-14 rounded-full border-2 border-orange-400 flex items-center justify-center text-orange-600 transition-all duration-300 group-hover:bg-orange-50 group-hover:scale-125 group-hover:shadow-lg group-hover:shadow-orange-300/40 group-hover:-translate-y-1"
       >
-        <item.icon className="w-8 h-8" strokeWidth={2.6} />
+        <item.icon className="w-8 h-8" strokeWidth={1.5} />
       </div>
 
       <span className="text-[11px] font-semibold mt-2 text-gray-800 group-hover:text-orange-600 transition-all duration-300 group-hover:scale-110 text-center leading-tight max-w-[110px]">
@@ -557,9 +558,9 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
 
               {/* INTRO */}
               <div className="fade-up" style={{ animationDelay: "0.4s" }}>
-                <p className="text-xl text-orange-500 leading-relaxed mb-6">
+                <p className="text-lg text-orange-500 leading-relaxed mb-6">
                 <div
-  className="fade-up text-xl font-bold mb-5"
+  className="fade-up text-lg font-bold mb-5"
   style={{ animationDelay: "0.4s" }}
 >
   {service.tagline}
@@ -569,7 +570,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
 </p>
 
                 {/* OFFERS */}
-                <h2 className="text-2xl font-extrabold text-gray-900 mb-5 fade-up" style={{ animationDelay: "0.55s" }}>
+                <h2 className="text-lg font-extrabold text-gray-900 mb-5 fade-up" style={{ animationDelay: "0.55s" }}>
                   {service.offerTitle}
                 </h2>
 
@@ -584,7 +585,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
                         <div className="w-2 h-2 rounded-full bg-[#1a5fa8]" />
                       </div>
 
-                      <p className="text-xl text-gray-700">
+                      <p className="text-base text-gray-700">
                         {offer.text}{' '}
                         {offer.link && (
                           <a
@@ -636,7 +637,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
                 className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-7 border border-blue-100 fade-up"
                 style={{ animationDelay: "1.3s" }}
               >
-                <h2 className="text-xl font-extrabold text-gray-900 mb-5">
+                <h2 className="text-base font-extrabold text-gray-900 mb-5">
                   {service.whyTitle}
                 </h2>
 
@@ -648,7 +649,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
                       style={{ animationDelay: `${1.4 + i * 0.15}s` }}
                     >
                       <CheckCircle size={20} className="text-[#1a5fa8] flex-shrink-0 mt-0.5" />
-                      <p className="text-gray-700 font-medium text-lg">{why}</p>
+                      <p className="text-gray-700 font-medium text-base">{why}</p>
                     </li>
                     
                   ))}
@@ -689,7 +690,7 @@ export default function ServiceDetail({ serviceId, onNavigate }) {
               {/* GALLERY */}
               {gallery.length > 0 && (
                 <div className="w-full fade-up" style={{ animationDelay: "0.6s" }}>
-                  <ImageGallery images={gallery} title="Gallery" />
+                  <ImageGallery images={gallery}/>
                 </div>
               )}
 

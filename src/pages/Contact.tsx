@@ -94,15 +94,15 @@ export default function Contact({ onNavigate }: { onNavigate?: (page: string) =>
         <div className="absolute inset-0 bg-gradient-to-br from-[#0d3d73]/90 to-[#1a5fa8]/80" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-orange-300 font-semibold font-montserrat text-sm uppercase tracking-widest mb-4">
-            Get In Touch
-          </p>
-          <h1 className="text-5xl sm:text-6xl font-montserrat font-extrabold text-white">
-            We'd love to
-          </h1>
-          <h1 className="text-5xl sm:text-6xl font-montserrat font-extrabold text-orange-400 mt-2">
-            hear from you.
-          </h1>
+        <p class="text-white text-6xl sm:text-6xl font-black uppercase tracking-tight mb-10 font-[Bebas_Neue]">
+ GET IN TOUCH
+</p>
+<h1 className="text-3xl  font-semibold text-white leading-snug">
+      We'd love to hear
+    </h1>
+    <h1 className="text-3xl font-bold text-orange-400 mt-0.5 leading-snug">
+      from you.
+    </h1>
          
         </div>
       </section>

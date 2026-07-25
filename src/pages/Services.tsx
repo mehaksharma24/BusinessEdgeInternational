@@ -167,26 +167,28 @@ export default function Services({ onNavigate }: ServicesProps) {
         }
       `}</style>
 
-      {/* Hero */}
-      <section className="relative pt-80 pb-52 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center animate-zoom-pulse"
-          style={{ backgroundImage: `url(${banners.services})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0d3d73]/90 to-[#1a5fa8]/80" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-orange-300 font-semibold text-sm uppercase tracking-widest mb-4">
-            Services
-          </p>
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-white">
-            Everything your brand needs,
-          </h1>
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-orange-400 mt-2">
-            all in one place.
-          </h1>
-        </div>
-      </section>
+     {/* Hero */}
+<section className="relative pt-80 pb-52 overflow-hidden">
+  <div
+    className="absolute inset-0 bg-cover bg-center animate-zoom-pulse"
+    style={{ backgroundImage: `url(${banners.services})` }}
+  />
+  <div className="absolute inset-0 bg-gradient-to-br from-[#0d3d73]/90 to-[#1a5fa8]/80" />
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <p class="text-white text-6xl sm:text-6xl font-black uppercase tracking-tight mb-10 font-[Bebas_Neue]">
+  SERVICES
+</p>
 
+
+
+    <h1 className="text-3xl  font-semibold text-white leading-snug">
+      Everything your brand needs,
+    </h1>
+    <h1 className="text-3xl font-bold text-orange-400 mt-0.5 leading-snug">
+      all in one place.
+    </h1>
+  </div>
+</section>
       {/* Services Grid */}
       <section className="relative py-24">
         <AnimatedBackground />

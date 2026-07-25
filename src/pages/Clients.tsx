@@ -52,17 +52,24 @@ function MarqueeRow({ logos, reverse = false }: { logos: typeof marqueeLogos; re
         style={{ background: 'linear-gradient(to left, #f9fafb, transparent)' }} />
 
       <div
-        className="flex gap-16 items-center"
+        className="flex gap-9 items-center"
         style={{
           width: 'max-content',
           animation: `marquee${reverse ? 'Rev' : 'Fwd'} ${logos.length * 2.5}s linear infinite`,
         }}
       >
-        {doubled.map((logo, i) => (
-          <div key={i} className="flex-shrink-0 w-56 flex items-center justify-center h-20 transition-all duration-300">
-            <LogoImg src={logo.src} name={logo.name} className="max-h-28 max-w-[260px] object-contain"/>
-          </div>
-        ))}
+       {doubled.map((logo, i) => (
+  <div
+    key={i}
+    className="flex-shrink-0 w-56 h-32 flex items-center justify-center transition-all duration-300"
+  >
+    <LogoImg
+      src={logo.src}
+      name={logo.name}
+      className="max-h-28 max-w-[220px] w-auto h-auto object-contain"
+    />
+  </div>
+))}
       </div>
     </div>
   );
@@ -92,11 +99,15 @@ export default function Clients({ onNavigate }: ClientsProps) {
         <div className="absolute inset-0 bg-gradient-to-br from-[#0d3d73]/90 to-[#1a5fa8]/80" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-orange-300 font-semibold text-sm uppercase tracking-widest mb-4">Our Clients</p>
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-white"
-            style={{ textShadow: '2px 2px 4px #243d7d' }}>
-            Trusted by brands that value impact.
-          </h1>
+        <p class="text-white text-6xl sm:text-6xl font-black uppercase tracking-tight mb-10 font-[Bebas_Neue]">
+  OUR CLIENTS
+</p>
+<h1 className="text-3xl  font-semibold text-white leading-snug">
+      Trusted by brands that,
+    </h1>
+    <h1 className="text-3xl sm:text-2xl font-bold text-orange-400 mt-0.5 leading-snug">
+      value Impact.
+    </h1>
         </div>
       </section>
 

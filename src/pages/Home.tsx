@@ -89,22 +89,22 @@ export default function Home({ onNavigate }: HomeProps) {
 
         {/* TEXT SIDE */}
 <div>
-<p className="text-orange-500 font-bold text-5xl mb-4">
+<p className="text-orange-500 font-bold text-3xl mb-4">
   About Us
 </p>
 
 
 
 
-  <h2 className="text-2xl font-normal text-gray-900 leading-snug mb-6 font-montserrat">
+  <h2 className="text-xl font-normal text-gray-900 leading-snug mb-6 font-montserrat">
     We make brands <span className="text-[#1a5fa8]">impossible</span> to ignore.
   </h2>
 
-  <p className="text-2xl font-normal text-gray-700 leading-relaxed mb-6 font-montserrat">
+  <p className="text-xl font-normal text-gray-700 leading-relaxed mb-6 font-montserrat">
     Business Edge International (BEI) helps brands show up better, everywhere.
   </p>
 
-  <p className="text-2xl font-normal text-gray-700 leading-relaxed mb-8 font-montserrat">
+  <p className="text-xl font-normal text-gray-700 leading-relaxed mb-8 font-montserrat">
     With over 20 years of global experience, we turn ideas into high-impact brand experiences across merch, apparel, print, digital, and experiential. From concept to execution, we handle every detail so your brand connects, stands out, and delivers real results.
   </p>
 </div>
