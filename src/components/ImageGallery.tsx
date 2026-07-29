@@ -20,7 +20,7 @@ function getCaption(img: ImageItem): string | undefined {
   return typeof img === 'string' ? undefined : img.caption;
 }
 
-export default function ImageGallery({ images, title = 'Gallery' }: ImageGalleryProps) {
+export default function ImageGallery({ images, title }: ImageGalleryProps) {
   const [current, setCurrent] = useState(0);
   const [lightbox, setLightbox] = useState<number | null>(null);
 

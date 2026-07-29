@@ -99,13 +99,13 @@ export default function Clients({ onNavigate }: ClientsProps) {
         <div className="absolute inset-0 bg-gradient-to-br from-[#0d3d73]/90 to-[#1a5fa8]/80" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-white text-6xl sm:text-6xl font-black uppercase tracking-tight mb-10 font-[Bebas_Neue]">
+        <p class="text-white text-4xl sm:text-4xl font-semibold uppercase tracking-tight mb-10 font-[Bebas_Neue]">
   OUR CLIENTS
 </p>
 <h1 className="text-3xl  font-semibold text-white leading-snug">
-      Trusted by brands that,
+      Trusted by brands that
     </h1>
-    <h1 className="text-3xl sm:text-2xl font-bold text-orange-400 mt-0.5 leading-snug">
+    <h1 className="text-3xl sm:text-3xl font-bold text-orange-400 mt-0.5 leading-snug">
       value Impact.
     </h1>
         </div>

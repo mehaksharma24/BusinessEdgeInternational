@@ -175,7 +175,7 @@ export default function Services({ onNavigate }: ServicesProps) {
   />
   <div className="absolute inset-0 bg-gradient-to-br from-[#0d3d73]/90 to-[#1a5fa8]/80" />
   <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-  <p class="text-white text-6xl sm:text-6xl font-black uppercase tracking-tight mb-10 font-[Bebas_Neue]">
+  <p class="text-white text-4xl sm:text-4xl font-semibold uppercase tracking-tight mb-10 font-[Bebas_Neue]">
   SERVICES
 </p>
 
@@ -195,11 +195,12 @@ export default function Services({ onNavigate }: ServicesProps) {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
-              <button
-                key={service.id}
-                onClick={() => onNavigate(`service-${service.id}`)}
-                className="group rounded-xl bg-white/80 backdrop-blur-sm border border-orange-200 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-left overflow-hidden"
-              >
+            <button
+            key={service.id}
+            onClick={() => onNavigate(`service-${service.id}`)}
+            className="group rounded-xl bg-white/80 backdrop-blur-sm border border-orange-200 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-left overflow-hidden"
+          >
+          
                 {/* FULL COVER IMAGE FIX */}
                 <div className="w-full h-56 overflow-hidden">
                   <img
