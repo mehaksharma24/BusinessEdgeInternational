@@ -17,7 +17,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               Over 20 years of global experience turning ideas into high-impact brand experiences across merch, apparel, print, digital, and experiential.
             </p>
 
-            {/* SOCIAL ICONS (RESTORED ORIGINAL SVGs) */}
+            {/* SOCIAL ICONS */}
             <div className="flex gap-4">
 
               {/* LinkedIn */}
@@ -48,9 +48,9 @@ export default function Footer({ onNavigate }: FooterProps) {
                 </svg>
               </a>
 
-              {/* Facebook */}
+              {/* Facebook (updated link) */}
               <a
-                href="https://www.facebook.com/businessedgeinternational"
+                href="https://facebook.com/BusinessEdgeIntl/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-white/10 hover:bg-blue-600 flex items-center justify-center transition"
@@ -58,6 +58,19 @@ export default function Footer({ onNavigate }: FooterProps) {
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+
+              {/* TikTok */}
+              <a
+                href="https://www.tiktok.com/@biznessedge"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-lg bg-white/10 hover:bg-pink-500 flex items-center justify-center transition"
+                aria-label="TikTok"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2c1.1 0 2 .9 2 2v10.1c0 1.7-1.3 3.1-3 3.1s-3-1.4-3-3.1c0-1.7 1.3-3.1 3-3.1.3 0 .7.1 1 .2V8.6c-.3-.1-.7-.1-1-.1-3.3 0-6 2.7-6 6.1s2.7 6.1 6 6.1 6-2.7 6-6.1V7.3c1 .7 2.2 1.1 3.5 1.1V5.4c-1.2 0-2.3-.4-3.2-1.1C15.8 3.3 14.1 2 12 2z"/>
                 </svg>
               </a>
 
