@@ -4,6 +4,9 @@ import https from 'node:https';
 // points at Vercel. The server only answers when the TLS handshake (SNI) and
 // Host header carry the real domain name, so a plain redirect or rewrite can
 // never reach it — this function proxies requests with both set correctly.
+// Rewrites in vercel.json pass the requested WordPress path as ?wppath=…
+// (a single-file function is used because catch-all [...path].js filenames
+// are not supported outside Next.js).
 const ORIGIN_IP = '162.241.224.155';
 const ORIGIN_HOST = 'thebiznessedge.com';
 
@@ -15,6 +18,17 @@ const SKIP_REQUEST_HEADERS = new Set([
   'forwarded',
   'content-length',
 ]);
+
+function originPath(req) {
+  const url = new URL(req.url, 'https://internal');
+  let wppath = url.searchParams.get('wppath') || (req.query && req.query.wppath);
+  if (Array.isArray(wppath)) wppath = wppath[0];
+  if (!wppath) return null;
+  if (!wppath.startsWith('/')) wppath = `/${wppath}`;
+  url.searchParams.delete('wppath');
+  const query = url.searchParams.toString();
+  return query ? `${wppath}?${query}` : wppath;
+}
 
 async function readBody(req) {
   // The Vercel Node runtime may have already parsed the body into req.body;
@@ -34,7 +48,12 @@ async function readBody(req) {
 }
 
 export default async function handler(req, res) {
-  const path = req.url.replace(/^\/api\/wp-proxy/, '') || '/';
+  const path = originPath(req);
+  if (!path) {
+    res.statusCode = 400;
+    res.end('Missing wppath');
+    return;
+  }
 
   const headers = {};
   for (const [key, value] of Object.entries(req.headers)) {
