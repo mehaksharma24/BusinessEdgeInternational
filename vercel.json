@@ -20,11 +20,11 @@
   ],
   "rewrites": [
     { "source": "/wp-admin/", "destination": "/api/wp-proxy?wppath=/wp-admin/" },
-    { "source": "/wp-admin/:path*", "destination": "/api/wp-proxy?wppath=/wp-admin/:path*" },
+    { "source": "/wp-admin/:wpproxypath*", "destination": "/api/wp-proxy?wppath=/wp-admin/:wpproxypath*" },
     { "source": "/wp-login.php", "destination": "/api/wp-proxy?wppath=/wp-login.php" },
-    { "source": "/wp-includes/:path*", "destination": "/api/wp-proxy?wppath=/wp-includes/:path*" },
-    { "source": "/wp-content/:path*", "destination": "/api/wp-proxy?wppath=/wp-content/:path*" },
-    { "source": "/wp-json/:path*", "destination": "/api/wp-proxy?wppath=/wp-json/:path*" },
+    { "source": "/wp-includes/:wpproxypath*", "destination": "/api/wp-proxy?wppath=/wp-includes/:wpproxypath*" },
+    { "source": "/wp-content/:wpproxypath*", "destination": "/api/wp-proxy?wppath=/wp-content/:wpproxypath*" },
+    { "source": "/wp-json/:wpproxypath*", "destination": "/api/wp-proxy?wppath=/wp-json/:wpproxypath*" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }

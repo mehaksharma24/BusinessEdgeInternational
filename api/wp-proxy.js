@@ -26,6 +26,9 @@ function originPath(req) {
   if (!wppath) return null;
   if (!wppath.startsWith('/')) wppath = `/${wppath}`;
   url.searchParams.delete('wppath');
+  // Vercel appends the matched :wpproxypath* source param to the query; drop
+  // it so it never collides with WordPress params (WooCommerce uses "path").
+  url.searchParams.delete('wpproxypath');
   const query = url.searchParams.toString();
   return query ? `${wppath}?${query}` : wppath;
 }
