@@ -1,6 +1,7 @@
 {
-  "trailingSlash": false,
   "redirects": [
+    { "source": "/wp-admin", "destination": "/wp-admin/", "permanent": false },
+    { "source": "/admin.php", "destination": "/wp-admin/admin.php", "permanent": false },
     { "source": "/:slug(what-we-do|whatwedo|our-services)\\.htm", "destination": "/services", "permanent": true },
     { "source": "/:slug(what-we-do|whatwedo|our-services)", "destination": "/services", "permanent": true },
     { "source": "/:slug(our-clients|ourclients|clients|testimonials)\\.htm", "destination": "/clients", "permanent": true },
@@ -18,7 +19,7 @@
     { "source": "/:page*\\.html", "destination": "/", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/wp-admin", "destination": "/api/wp-proxy?wppath=/wp-admin/" },
+    { "source": "/wp-admin/", "destination": "/api/wp-proxy?wppath=/wp-admin/" },
     { "source": "/wp-admin/:path*", "destination": "/api/wp-proxy?wppath=/wp-admin/:path*" },
     { "source": "/wp-login.php", "destination": "/api/wp-proxy?wppath=/wp-login.php" },
     { "source": "/wp-includes/:path*", "destination": "/api/wp-proxy?wppath=/wp-includes/:path*" },
