@@ -39,6 +39,7 @@ function pageFromPath(pathname: string): string {
     .replace(/^\//, '')
     .replace(/\.html?$/, '');
   if (!slug) return 'home';
+  if (slug === 'wp-admin' || slug.startsWith('wp-admin/') || slug === 'wp-login.php') return 'wp-admin';
   if (LEGACY_PAGES[slug]) return LEGACY_PAGES[slug];
   if (KNOWN_PAGES.includes(slug) || /^service-\d+$/.test(slug)) return slug;
   return 'home';
@@ -69,7 +70,7 @@ export default function App() {
 
   // Clean up legacy/unknown URLs so the address bar shows the new page path
   useEffect(() => {
-    if (currentPage === 'search' || currentPage === 'login') return;
+    if (currentPage === 'search' || currentPage === 'login' || currentPage === 'wp-admin') return;
     const expected = `/${currentPage}`;
     const path = window.location.pathname;
     const isHome = currentPage === 'home' && (path === '/' || path === '/home');
@@ -85,6 +86,10 @@ export default function App() {
     }
     if (currentPage === 'login') {
       window.location.href = 'https://products.thebiznessedge.com/signin.htm';
+    }
+    // WordPress now lives behind the Bluehost account; the domain itself is served by Vercel
+    if (currentPage === 'wp-admin') {
+      window.location.href = 'https://www.bluehost.com/my-account/login';
     }
   }, [currentPage]);
 
