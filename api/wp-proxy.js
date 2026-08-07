@@ -85,10 +85,40 @@ export default async function handler(req, res) {
         delete outHeaders['transfer-encoding'];
         delete outHeaders.connection;
         delete outHeaders['content-length'];
-        res.writeHead(origin.statusCode || 502, outHeaders);
-        origin.pipe(res);
-        origin.on('end', resolve);
-        origin.on('error', resolve);
+        if (outHeaders.location) {
+          outHeaders.location = outHeaders.location.replace(
+            '://thebiznessedge.com',
+            '://www.thebiznessedge.com'
+          );
+        }
+        // WordPress builds URLs from its non-www Site URL, but visitors browse
+        // on www (Vercel's canonical host). Browsers treat those as different
+        // origins, so REST calls from wp-admin would be blocked as
+        // cross-origin — rewrite textual responses to keep every URL on www.
+        const type = String(origin.headers['content-type'] || '');
+        if (/text\/|json|javascript|xml/.test(type)) {
+          const chunks = [];
+          origin.on('data', (chunk) => chunks.push(chunk));
+          origin.on('end', () => {
+            const body = Buffer.from(
+              Buffer.concat(chunks)
+                .toString('utf8')
+                .replaceAll('//thebiznessedge.com', '//www.thebiznessedge.com')
+                .replaceAll('\\/\\/thebiznessedge.com', '\\/\\/www.thebiznessedge.com'),
+              'utf8'
+            );
+            outHeaders['content-length'] = body.length;
+            res.writeHead(origin.statusCode || 502, outHeaders);
+            res.end(body);
+            resolve();
+          });
+          origin.on('error', resolve);
+        } else {
+          res.writeHead(origin.statusCode || 502, outHeaders);
+          origin.pipe(res);
+          origin.on('end', resolve);
+          origin.on('error', resolve);
+        }
       }
     );
     upstream.on('error', (err) => {
