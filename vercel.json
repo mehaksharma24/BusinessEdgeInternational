@@ -1,4 +1,5 @@
 {
+  "trailingSlash": false,
   "redirects": [
     { "source": "/:slug(what-we-do|whatwedo|our-services)\\.htm", "destination": "/services", "permanent": true },
     { "source": "/:slug(what-we-do|whatwedo|our-services)", "destination": "/services", "permanent": true },
