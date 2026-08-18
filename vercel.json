@@ -1,5 +1,7 @@
 {
   "redirects": [
+    { "source": "/wp-admin", "destination": "/wp-admin/", "permanent": false },
+    { "source": "/admin.php", "destination": "/wp-admin/admin.php", "permanent": false },
     { "source": "/:slug(what-we-do|whatwedo|our-services)\\.htm", "destination": "/services", "permanent": true },
     { "source": "/:slug(what-we-do|whatwedo|our-services)", "destination": "/services", "permanent": true },
     { "source": "/:slug(our-clients|ourclients|clients|testimonials)\\.htm", "destination": "/clients", "permanent": true },
@@ -16,5 +18,13 @@
     { "source": "/:page*\\.htm", "destination": "/", "permanent": true },
     { "source": "/:page*\\.html", "destination": "/", "permanent": true }
   ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+  "rewrites": [
+    { "source": "/wp-admin/", "destination": "/api/wp-proxy?wppath=/wp-admin/" },
+    { "source": "/wp-admin/:wpproxypath*", "destination": "/api/wp-proxy?wppath=/wp-admin/:wpproxypath*" },
+    { "source": "/wp-login.php", "destination": "/api/wp-proxy?wppath=/wp-login.php" },
+    { "source": "/wp-includes/:wpproxypath*", "destination": "/api/wp-proxy?wppath=/wp-includes/:wpproxypath*" },
+    { "source": "/wp-content/:wpproxypath*", "destination": "/api/wp-proxy?wppath=/wp-content/:wpproxypath*" },
+    { "source": "/wp-json/:wpproxypath*", "destination": "/api/wp-proxy?wppath=/wp-json/:wpproxypath*" },
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }

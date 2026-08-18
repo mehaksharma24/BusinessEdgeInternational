@@ -195,18 +195,23 @@ export default function Services({ onNavigate }: ServicesProps) {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
-            <button
+            <a
             key={service.id}
-            onClick={() => onNavigate(`service-${service.id}`)}
-            className="group rounded-xl bg-white/80 backdrop-blur-sm border border-orange-200 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-left overflow-hidden"
+            href={`/service-${service.id}`}
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigate(`service-${service.id}`);
+            }}
+            className="group block rounded-xl bg-white/80 backdrop-blur-sm border border-orange-200 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-left overflow-hidden"
           >
           
-                {/* FULL COVER IMAGE FIX */}
-                <div className="w-full h-56 overflow-hidden">
+                {/* Uniform image area: identical width/height on every card */}
+                <div className="w-full aspect-[16/10] shrink-0 overflow-hidden bg-gray-100">
                   <img
                     src={service.photo}
                     alt={service.title}
-                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    className="block w-full h-full object-cover object-top"
                   />
                 </div>
 
@@ -227,7 +232,7 @@ export default function Services({ onNavigate }: ServicesProps) {
                     Learn more <ArrowRight size={14} />
                   </span>
                 </div>
-              </button>
+              </a>
             ))}
           </div>
         </div>
