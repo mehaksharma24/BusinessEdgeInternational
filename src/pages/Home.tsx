@@ -41,7 +41,7 @@ export default function Home({ onNavigate }: HomeProps) {
   <div className="relative z-10 w-full max-w-[1200px] mx-auto px-6 sm:px-10 lg:px-16 pt-28 text-center">
     <div className="max-w-[1200px] mx-auto">
       <h1
-        className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-wide mb-8 whitespace-nowrap"
+        className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] tracking-wide mb-8 whitespace-nowrap"
         style={{ textShadow: '3px 3px 6px #243d7d' }}
       >
         Where ideas become
@@ -66,7 +66,7 @@ export default function Home({ onNavigate }: HomeProps) {
       <div className="flex justify-center">
         <button
           onClick={() => onNavigate('services')}
-          className="group flex items-center gap-3 px-12 py-6 bg-orange-500 text-white text-xl font-extrabold rounded-2xl hover:bg-orange-400 transition-all duration-300 shadow-xl hover:shadow-orange-500/40 hover:shadow-2xl hover:-translate-y-1"
+          className="group flex items-center gap-3 px-12 py-6 bg-orange-500 text-white text-xl font-extrabold rounded-xl hover:bg-orange-400 transition-all duration-300 shadow-xl hover:shadow-orange-500/40 hover:shadow-2xl hover:-translate-y-1"
         >
           Explore Services
           <ArrowRight size={26} className="group-hover:translate-x-1 transition-transform" />
@@ -112,23 +112,41 @@ export default function Home({ onNavigate }: HomeProps) {
 
             {/* VIDEO SIDE */}
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl w-full h-[420px]">
-                <video
-                  src={videoFile}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover"
-                />
+            <div className="rounded-2xl overflow-hidden shadow-2xl w-full aspect-video">
+
+              <video
+  src={videoFile}
+  autoPlay
+  loop
+  muted
+  playsInline
+  controls
+  className="w-full h-full object-cover"
+  onClick={(e) => {
+    if (e.currentTarget.requestFullscreen) {
+      e.currentTarget.requestFullscreen();
+    }
+  }}
+/>
+
+            
               </div>
 
-              <div className="absolute -bottom-6 -left-6 bg-orange-500 text-white rounded-2xl p-6 shadow-xl">
-                <div className="text-4xl font-black">20+</div>
-                <div className="text-sm font-medium mt-1">
-                  Years of Global Experience
-                </div>
-              </div>
+              <div className="absolute -bottom-3 -left-3 bg-orange-500 text-white rounded-xl 
+                max-sm:p-2 sm:p-6 shadow-xl">
+
+  <div className="font-black 
+                  max-sm:text-lg sm:text-4xl">
+    20+
+  </div>
+
+  <div className="font-medium mt-1 
+                  max-sm:text-[10px] sm:text-sm">
+    Years of Global Experience
+  </div>
+</div>
+
+
             </div>
 
           </div>
