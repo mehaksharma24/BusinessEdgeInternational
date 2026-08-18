@@ -300,7 +300,7 @@ const serviceData = [
     ],
     note: {
       text: 'Need large-format or specialized signage? Visit our BEI Sign Central page for more details.',
-      link: 'https://beisigncentral.com/',
+      link: 'https://bei-signcentral.com',
       linkText: 'BEI Sign Central'
     },
   },
