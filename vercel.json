@@ -128,10 +128,6 @@
   ],
   "rewrites": [
     {
-      "source": "/__routeprobe",
-      "destination": "/api/wp-proxy?wppath=/shop/"
-    },
-    {
       "source": "/wp-admin/",
       "destination": "/api/wp-proxy?wppath=/wp-admin/"
     },
@@ -140,20 +136,48 @@
       "destination": "/api/wp-proxy?wppath=/wp-admin/:wpproxypath*"
     },
     {
-      "source": "/wp-login.php",
-      "destination": "/api/wp-proxy?wppath=/wp-login.php"
+      "source": "/wp-admin/:wpproxypath*/",
+      "destination": "/api/wp-proxy?wppath=/wp-admin/:wpproxypath*/"
+    },
+    {
+      "source": "/wp-includes/",
+      "destination": "/api/wp-proxy?wppath=/wp-includes/"
     },
     {
       "source": "/wp-includes/:wpproxypath*",
       "destination": "/api/wp-proxy?wppath=/wp-includes/:wpproxypath*"
     },
     {
+      "source": "/wp-includes/:wpproxypath*/",
+      "destination": "/api/wp-proxy?wppath=/wp-includes/:wpproxypath*/"
+    },
+    {
+      "source": "/wp-content/",
+      "destination": "/api/wp-proxy?wppath=/wp-content/"
+    },
+    {
       "source": "/wp-content/:wpproxypath*",
       "destination": "/api/wp-proxy?wppath=/wp-content/:wpproxypath*"
     },
     {
+      "source": "/wp-content/:wpproxypath*/",
+      "destination": "/api/wp-proxy?wppath=/wp-content/:wpproxypath*/"
+    },
+    {
+      "source": "/wp-json/",
+      "destination": "/api/wp-proxy?wppath=/wp-json/"
+    },
+    {
       "source": "/wp-json/:wpproxypath*",
       "destination": "/api/wp-proxy?wppath=/wp-json/:wpproxypath*"
+    },
+    {
+      "source": "/wp-json/:wpproxypath*/",
+      "destination": "/api/wp-proxy?wppath=/wp-json/:wpproxypath*/"
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/api/wp-proxy?wppath=/wp-login.php"
     },
     {
       "source": "/:wpzone(rotman-custom-printing-zone|rotman-commerce-printing|rotman-gifts|bei-custom-printing-zone)",
@@ -176,6 +200,10 @@
       "destination": "/api/wp-proxy?wppath=/shop/:wpproxypath*"
     },
     {
+      "source": "/shop/:wpproxypath*/",
+      "destination": "/api/wp-proxy?wppath=/shop/:wpproxypath*/"
+    },
+    {
       "source": "/cart",
       "destination": "/api/wp-proxy?wppath=/cart/"
     },
@@ -186,6 +214,10 @@
     {
       "source": "/cart/:wpproxypath*",
       "destination": "/api/wp-proxy?wppath=/cart/:wpproxypath*"
+    },
+    {
+      "source": "/cart/:wpproxypath*/",
+      "destination": "/api/wp-proxy?wppath=/cart/:wpproxypath*/"
     },
     {
       "source": "/checkout",
@@ -200,6 +232,10 @@
       "destination": "/api/wp-proxy?wppath=/checkout/:wpproxypath*"
     },
     {
+      "source": "/checkout/:wpproxypath*/",
+      "destination": "/api/wp-proxy?wppath=/checkout/:wpproxypath*/"
+    },
+    {
       "source": "/my-account",
       "destination": "/api/wp-proxy?wppath=/my-account/"
     },
@@ -210,6 +246,10 @@
     {
       "source": "/my-account/:wpproxypath*",
       "destination": "/api/wp-proxy?wppath=/my-account/:wpproxypath*"
+    },
+    {
+      "source": "/my-account/:wpproxypath*/",
+      "destination": "/api/wp-proxy?wppath=/my-account/:wpproxypath*/"
     },
     {
       "source": "/product",
@@ -224,6 +264,10 @@
       "destination": "/api/wp-proxy?wppath=/product/:wpproxypath*"
     },
     {
+      "source": "/product/:wpproxypath*/",
+      "destination": "/api/wp-proxy?wppath=/product/:wpproxypath*/"
+    },
+    {
       "source": "/product-category",
       "destination": "/api/wp-proxy?wppath=/product-category/"
     },
@@ -236,6 +280,10 @@
       "destination": "/api/wp-proxy?wppath=/product-category/:wpproxypath*"
     },
     {
+      "source": "/product-category/:wpproxypath*/",
+      "destination": "/api/wp-proxy?wppath=/product-category/:wpproxypath*/"
+    },
+    {
       "source": "/product-tag",
       "destination": "/api/wp-proxy?wppath=/product-tag/"
     },
@@ -246,6 +294,10 @@
     {
       "source": "/product-tag/:wpproxypath*",
       "destination": "/api/wp-proxy?wppath=/product-tag/:wpproxypath*"
+    },
+    {
+      "source": "/product-tag/:wpproxypath*/",
+      "destination": "/api/wp-proxy?wppath=/product-tag/:wpproxypath*/"
     },
     {
       "source": "/",
