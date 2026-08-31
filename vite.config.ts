@@ -22,6 +22,15 @@ const wpProxy = {
   },
 };
 
+// WordPress 302s the bare "/" path from non-www to www, so root-path requests
+// (the /?wc-ajax=… cart calls) have to go out with the www host to avoid a
+// redirect loop. api/wp-proxy.js does the same in production.
+const wpProxyWww = {
+  ...wpProxy,
+  agent: new https.Agent({ servername: 'www.thebiznessedge.com', rejectUnauthorized: false }),
+  headers: { host: 'www.thebiznessedge.com' },
+};
+
 export default defineConfig({
   plugins: [react()],
   base: '/',
@@ -36,6 +45,21 @@ export default defineConfig({
       '/wp-includes': wpProxy,
       '/wp-content': wpProxy,
       '/wp-json': wpProxy,
+      // Client storefronts and WooCommerce, still served by WordPress
+      '/rotman-custom-printing-zone': wpProxy,
+      '/rotman-commerce-printing': wpProxy,
+      '/rotman-gifts': wpProxy,
+      '/bei-custom-printing-zone': wpProxy,
+      '/shop': wpProxy,
+      '/product': wpProxy,
+      '/product-category': wpProxy,
+      '/product-tag': wpProxy,
+      '/cart': wpProxy,
+      '/checkout': wpProxy,
+      '/my-account': wpProxy,
+      // WooCommerce posts its cart-fragment AJAX to /?wc-ajax=… (handled in
+      // production by the matching `has` rewrite in vercel.json)
+      '^/\\?wc-ajax=': wpProxyWww,
     },
   },
 });

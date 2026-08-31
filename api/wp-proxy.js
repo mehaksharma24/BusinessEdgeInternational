@@ -29,6 +29,14 @@ function originPath(req) {
   // Vercel appends the matched :wpproxypath* source param to the query; drop
   // it so it never collides with WordPress params (WooCommerce uses "path").
   url.searchParams.delete('wpproxypath');
+  // WordPress answers an extensionless path without a trailing slash with a
+  // 301 to its canonical trailing-slash form. That redirect would come back
+  // through this proxy and be redirected again, so normalize up front. Only
+  // content paths are touched: /wp-admin, /wp-json and friends route on the
+  // exact path they were given.
+  if (!wppath.startsWith('/wp-') && !wppath.endsWith('/') && !/\.[a-z0-9]+$/i.test(wppath)) {
+    wppath = `${wppath}/`;
+  }
   const query = url.searchParams.toString();
   return query ? `${wppath}?${query}` : wppath;
 }
@@ -64,7 +72,12 @@ export default async function handler(req, res) {
     if (key.startsWith('x-vercel-') || key.startsWith('x-forwarded-')) continue;
     headers[key] = value;
   }
-  headers.host = ORIGIN_HOST;
+  // WordPress 302s the bare "/" path from non-www to www, and the www copy of
+  // that redirect would come straight back through this proxy — an endless
+  // loop. Root-path requests (WooCommerce's /?wc-ajax=… cart calls) are sent
+  // with the www host, which the origin serves directly.
+  const originHost = path.startsWith('/?') || path === '/' ? `www.${ORIGIN_HOST}` : ORIGIN_HOST;
+  headers.host = originHost;
   headers['accept-encoding'] = 'identity';
 
   const body = ['GET', 'HEAD'].includes(req.method) ? null : await readBody(req);
@@ -74,7 +87,7 @@ export default async function handler(req, res) {
     const upstream = https.request(
       {
         host: ORIGIN_IP,
-        servername: ORIGIN_HOST,
+        servername: originHost,
         rejectUnauthorized: false,
         method: req.method,
         path,

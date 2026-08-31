@@ -1,30 +1,189 @@
 {
   "redirects": [
-    { "source": "/wp-admin", "destination": "/wp-admin/", "permanent": false },
-    { "source": "/admin.php", "destination": "/wp-admin/admin.php", "permanent": false },
-    { "source": "/:slug(what-we-do|whatwedo|our-services)\\.htm", "destination": "/services", "permanent": true },
-    { "source": "/:slug(what-we-do|whatwedo|our-services)", "destination": "/services", "permanent": true },
-    { "source": "/:slug(our-clients|ourclients|clients|testimonials)\\.htm", "destination": "/clients", "permanent": true },
-    { "source": "/:slug(our-clients|ourclients|testimonials)", "destination": "/clients", "permanent": true },
-    { "source": "/:slug(lets-talk|letstalk|contact-us|contactus|contact)\\.htm", "destination": "/contact", "permanent": true },
-    { "source": "/:slug(lets-talk|letstalk|contact-us|contactus)", "destination": "/contact", "permanent": true },
-    { "source": "/:slug(who-we-are|whoweare|about-us|aboutus|about|our-team)\\.htm", "destination": "/team", "permanent": true },
-    { "source": "/:slug(who-we-are|whoweare|about-us|aboutus|about)", "destination": "/team", "permanent": true },
-    { "source": "/:slug(why-us|whyus|home|index)\\.htm", "destination": "/", "permanent": true },
-    { "source": "/:slug(why-us|whyus)", "destination": "/", "permanent": true },
-    { "source": "/:slug(signin|login)\\.htm", "destination": "https://products.thebiznessedge.com/signin.htm", "permanent": true },
-    { "source": "/:slug(deals|search-for-promotional-ideas|promotional-ideas|products|browse-products)\\.htm", "destination": "https://products.thebiznessedge.com/", "permanent": true },
-    { "source": "/:slug(deals|search-for-promotional-ideas|promotional-ideas|browse-products)", "destination": "https://products.thebiznessedge.com/", "permanent": true },
-    { "source": "/:page*\\.htm", "destination": "/", "permanent": true },
-    { "source": "/:page*\\.html", "destination": "/", "permanent": true }
+    {
+      "source": "/wp-admin",
+      "destination": "/wp-admin/",
+      "permanent": false
+    },
+    {
+      "source": "/admin.php",
+      "destination": "/wp-admin/admin.php",
+      "permanent": false
+    },
+    {
+      "source": "/:slug(what-we-do|whatwedo|our-services)\\.htm",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(what-we-do|whatwedo|our-services)",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(what-we-do|whatwedo|our-services)/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(our-clients|ourclients|clients|testimonials)\\.htm",
+      "destination": "/clients",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(our-clients|ourclients|testimonials|clientele)",
+      "destination": "/clients",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(our-clients|ourclients|testimonials|clientele)/",
+      "destination": "/clients",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(lets-talk|letstalk|contact-us|contactus|contact)\\.htm",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(lets-talk|letstalk|contact-us|contactus|talk-to-us)",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(lets-talk|letstalk|contact-us|contactus|talk-to-us)/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(who-we-are|whoweare|about-us|aboutus|about|our-team)\\.htm",
+      "destination": "/team",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(who-we-are|whoweare|about-us|aboutus|about|get-to-know-us)",
+      "destination": "/team",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(who-we-are|whoweare|about-us|aboutus|about|get-to-know-us)/",
+      "destination": "/team",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(why-us|whyus|home|index)\\.htm",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(why-us|whyus)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(why-us|whyus)/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(co-packing-and-kitting|demos-and-sampling-events|completely-custom-projects-and-solutions|graphics-and-web-designing|signage-displays-and-event-paraphernalia|web-and-off-set-printing|appreciations-awards-and-trophies|apparel-and-team-uniforms|corporate-gifts)",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(co-packing-and-kitting|demos-and-sampling-events|completely-custom-projects-and-solutions|graphics-and-web-designing|signage-displays-and-event-paraphernalia|web-and-off-set-printing|appreciations-awards-and-trophies|apparel-and-team-uniforms|corporate-gifts)/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(signin|login)\\.htm",
+      "destination": "https://products.thebiznessedge.com/signin.htm",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(deals|search-for-promotional-ideas|promotional-ideas|products|browse-products)\\.htm",
+      "destination": "https://products.thebiznessedge.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(deals|search-for-promotional-ideas|promotional-ideas|browse-products|current-promotion)",
+      "destination": "https://products.thebiznessedge.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:slug(deals|search-for-promotional-ideas|promotional-ideas|browse-products|current-promotion)/",
+      "destination": "https://products.thebiznessedge.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:page*\\.htm",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:page*\\.html",
+      "destination": "/",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/wp-admin/", "destination": "/api/wp-proxy?wppath=/wp-admin/" },
-    { "source": "/wp-admin/:wpproxypath*", "destination": "/api/wp-proxy?wppath=/wp-admin/:wpproxypath*" },
-    { "source": "/wp-login.php", "destination": "/api/wp-proxy?wppath=/wp-login.php" },
-    { "source": "/wp-includes/:wpproxypath*", "destination": "/api/wp-proxy?wppath=/wp-includes/:wpproxypath*" },
-    { "source": "/wp-content/:wpproxypath*", "destination": "/api/wp-proxy?wppath=/wp-content/:wpproxypath*" },
-    { "source": "/wp-json/:wpproxypath*", "destination": "/api/wp-proxy?wppath=/wp-json/:wpproxypath*" },
-    { "source": "/(.*)", "destination": "/" }
+    {
+      "source": "/wp-admin/",
+      "destination": "/api/wp-proxy?wppath=/wp-admin/"
+    },
+    {
+      "source": "/wp-admin/:wpproxypath*",
+      "destination": "/api/wp-proxy?wppath=/wp-admin/:wpproxypath*"
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/api/wp-proxy?wppath=/wp-login.php"
+    },
+    {
+      "source": "/wp-includes/:wpproxypath*",
+      "destination": "/api/wp-proxy?wppath=/wp-includes/:wpproxypath*"
+    },
+    {
+      "source": "/wp-content/:wpproxypath*",
+      "destination": "/api/wp-proxy?wppath=/wp-content/:wpproxypath*"
+    },
+    {
+      "source": "/wp-json/:wpproxypath*",
+      "destination": "/api/wp-proxy?wppath=/wp-json/:wpproxypath*"
+    },
+    {
+      "source": "/:wpzone(rotman-custom-printing-zone|rotman-commerce-printing|rotman-gifts|bei-custom-printing-zone)",
+      "destination": "/api/wp-proxy?wppath=/:wpzone/"
+    },
+    {
+      "source": "/:wpzone(rotman-custom-printing-zone|rotman-commerce-printing|rotman-gifts|bei-custom-printing-zone)/",
+      "destination": "/api/wp-proxy?wppath=/:wpzone/"
+    },
+    {
+      "source": "/:wpshop(shop|cart|checkout|my-account|product|product-category|product-tag)",
+      "destination": "/api/wp-proxy?wppath=/:wpshop/"
+    },
+    {
+      "source": "/:wpshop(shop|cart|checkout|my-account|product|product-category|product-tag)/",
+      "destination": "/api/wp-proxy?wppath=/:wpshop/"
+    },
+    {
+      "source": "/:wpshop(shop|cart|checkout|my-account|product|product-category|product-tag)/:wpproxypath*",
+      "destination": "/api/wp-proxy?wppath=/:wpshop/:wpproxypath*"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "wc-ajax"
+        }
+      ],
+      "destination": "/api/wp-proxy?wppath=/"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
   ]
 }
