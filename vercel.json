@@ -128,6 +128,10 @@
   ],
   "rewrites": [
     {
+      "source": "/__routeprobe",
+      "destination": "/api/wp-proxy?wppath=/shop/"
+    },
+    {
       "source": "/wp-admin/",
       "destination": "/api/wp-proxy?wppath=/wp-admin/"
     },
