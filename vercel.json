@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "wc-ajax"
+        }
+      ],
+      "destination": "/api/wp-proxy?wppath=/",
+      "permanent": false
+    },
+    {
       "source": "/wp-admin",
       "destination": "/wp-admin/",
       "permanent": false
@@ -298,16 +309,6 @@
     {
       "source": "/product-tag/:wpproxypath*/",
       "destination": "/api/wp-proxy?wppath=/product-tag/:wpproxypath*/"
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "query",
-          "key": "wc-ajax"
-        }
-      ],
-      "destination": "/api/wp-proxy?wppath=/"
     },
     {
       "source": "/(.*)",
