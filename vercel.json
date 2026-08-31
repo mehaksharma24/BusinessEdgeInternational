@@ -160,16 +160,88 @@
       "destination": "/api/wp-proxy?wppath=/:wpzone/"
     },
     {
-      "source": "/:wpshop(shop|cart|checkout|my-account|product|product-category|product-tag)",
-      "destination": "/api/wp-proxy?wppath=/:wpshop/"
+      "source": "/shop",
+      "destination": "/api/wp-proxy?wppath=/shop/"
     },
     {
-      "source": "/:wpshop(shop|cart|checkout|my-account|product|product-category|product-tag)/",
-      "destination": "/api/wp-proxy?wppath=/:wpshop/"
+      "source": "/shop/",
+      "destination": "/api/wp-proxy?wppath=/shop/"
     },
     {
-      "source": "/:wpshop(shop|cart|checkout|my-account|product|product-category|product-tag)/:wpproxypath*",
-      "destination": "/api/wp-proxy?wppath=/:wpshop/:wpproxypath*"
+      "source": "/shop/:wpproxypath*",
+      "destination": "/api/wp-proxy?wppath=/shop/:wpproxypath*"
+    },
+    {
+      "source": "/cart",
+      "destination": "/api/wp-proxy?wppath=/cart/"
+    },
+    {
+      "source": "/cart/",
+      "destination": "/api/wp-proxy?wppath=/cart/"
+    },
+    {
+      "source": "/cart/:wpproxypath*",
+      "destination": "/api/wp-proxy?wppath=/cart/:wpproxypath*"
+    },
+    {
+      "source": "/checkout",
+      "destination": "/api/wp-proxy?wppath=/checkout/"
+    },
+    {
+      "source": "/checkout/",
+      "destination": "/api/wp-proxy?wppath=/checkout/"
+    },
+    {
+      "source": "/checkout/:wpproxypath*",
+      "destination": "/api/wp-proxy?wppath=/checkout/:wpproxypath*"
+    },
+    {
+      "source": "/my-account",
+      "destination": "/api/wp-proxy?wppath=/my-account/"
+    },
+    {
+      "source": "/my-account/",
+      "destination": "/api/wp-proxy?wppath=/my-account/"
+    },
+    {
+      "source": "/my-account/:wpproxypath*",
+      "destination": "/api/wp-proxy?wppath=/my-account/:wpproxypath*"
+    },
+    {
+      "source": "/product",
+      "destination": "/api/wp-proxy?wppath=/product/"
+    },
+    {
+      "source": "/product/",
+      "destination": "/api/wp-proxy?wppath=/product/"
+    },
+    {
+      "source": "/product/:wpproxypath*",
+      "destination": "/api/wp-proxy?wppath=/product/:wpproxypath*"
+    },
+    {
+      "source": "/product-category",
+      "destination": "/api/wp-proxy?wppath=/product-category/"
+    },
+    {
+      "source": "/product-category/",
+      "destination": "/api/wp-proxy?wppath=/product-category/"
+    },
+    {
+      "source": "/product-category/:wpproxypath*",
+      "destination": "/api/wp-proxy?wppath=/product-category/:wpproxypath*"
+    },
+    {
+      "source": "/product-tag",
+      "destination": "/api/wp-proxy?wppath=/product-tag/"
+    },
+    {
+      "source": "/product-tag/",
+      "destination": "/api/wp-proxy?wppath=/product-tag/"
+    },
+    {
+      "source": "/product-tag/:wpproxypath*",
+      "destination": "/api/wp-proxy?wppath=/product-tag/:wpproxypath*"
     },
     {
       "source": "/",
