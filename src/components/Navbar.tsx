@@ -1,6 +1,7 @@
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import logoTagline from '../assets/BEI_DualLogo_Tagline.png';
+import logTagline from '../assets/BEI_signcentral.png';
 
 interface NavbarProps {
   currentPage: string;
@@ -51,13 +52,32 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
         <div className="flex items-center justify-between h-28 px-12">
 
           {/* Logo */}
-          <button onClick={() => onNavigate('home')} className="ml-0 pl-0">
-            <img
-              src={logoTagline}
-              alt="BEI Logo"
-              className="h-35 w-[400px] object-contain"
-            />
-          </button>
+          <div className="flex items-center gap-0 p-0 m-0">
+          <div className="flex items-center gap-0 p-0 m-0">
+  {/* Main BEI Logo → stays on your site */}
+  <button onClick={() => onNavigate('home')} className="p-0 m-0">
+    <img
+      src={logoTagline}
+      alt="BEI Logo"
+      className="h-30 w-[200px] object-contain"
+    />
+  </button>
+  </div>
+
+  {/* Sign Central Logo → external navigation */}
+  <button
+    onClick={() => window.location.href = "https://bei-signcentral.com/"}
+    className="p-0 m-0"
+  >
+    <img
+      src={logTagline}
+      alt="Sign Central Logo"
+      className="h-30 w-[200px] object-contain"
+    />
+  </button>
+
+
+</div>
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1 group">
